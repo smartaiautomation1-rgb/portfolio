@@ -1,0 +1,148 @@
+/* Shared styles for Kenniz portfolio
+   Variables match Tailwind config color tokens. */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  background-color: #fafafa;
+  color: #09090b;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Archivo', system-ui, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-display { font-family: 'Archivo', system-ui, sans-serif; }
+.font-body { font-family: 'Space Grotesk', system-ui, sans-serif; }
+
+/* Subtle grid pattern */
+.grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(9, 9, 11, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 9, 11, 0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+}
+
+/* Dotted variant */
+.dot-bg {
+  background-image: radial-gradient(rgba(9, 9, 11, 0.12) 1px, transparent 1px);
+  background-size: 20px 20px;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 30%, transparent 75%);
+}
+
+/* Radial accent glow */
+.glow {
+  background: radial-gradient(closest-side, rgba(37, 99, 235, 0.18), transparent 70%);
+}
+.glow-amber {
+  background: radial-gradient(closest-side, rgba(249, 115, 22, 0.18), transparent 70%);
+}
+.glow-emerald {
+  background: radial-gradient(closest-side, rgba(16, 185, 129, 0.16), transparent 70%);
+}
+
+/* Aurora gradient mesh - animated, GPU-friendly */
+.aurora {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(at 20% 20%, rgba(37, 99, 235, 0.18) 0px, transparent 50%),
+    radial-gradient(at 80% 10%, rgba(168, 85, 247, 0.14) 0px, transparent 50%),
+    radial-gradient(at 60% 80%, rgba(16, 185, 129, 0.12) 0px, transparent 50%);
+  filter: blur(40px);
+  opacity: 0.9;
+  animation: aurora-shift 16s ease-in-out infinite alternate;
+}
+@keyframes aurora-shift {
+  from { transform: translate3d(-2%, -2%, 0) scale(1); }
+  to   { transform: translate3d(3%, 2%, 0) scale(1.08); }
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(120deg, #09090b 0%, #2563eb 50%, #09090b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card with subtle gradient border */
+.gradient-border {
+  position: relative;
+  background: #ffffff;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(9, 9, 11, 0.08) 40%, rgba(37, 99, 235, 0.25));
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* Reveal-on-scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Marquee for logos */
+.marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 12%, black 88%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* Honeycomb / asymmetric tilt for visual variety */
+.tilt-card {
+  transition: transform 250ms ease, border-color 250ms ease, box-shadow 250ms ease;
+}
+.tilt-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 40px -24px rgba(9, 9, 11, 0.18);
+}
+
+/* Pretty number badge */
+.num-chip {
+  font-family: 'Archivo', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+  .aurora { animation: none; }
+  .marquee-track { animation: none; }
+}
