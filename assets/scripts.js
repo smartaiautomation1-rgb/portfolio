@@ -53,16 +53,20 @@
   const works = document.querySelectorAll('[data-work]');
   const filters = document.querySelectorAll('[data-filter]');
   if (filters.length && works.length) {
+    const setActive = (btn, active) => {
+      // Active = primary button; inactive = ghost chip.
+      btn.classList.toggle('btn', active);
+      btn.classList.toggle('btn-primary', active);
+      btn.classList.toggle('!py-2', active);
+      btn.classList.toggle('!px-4', active);
+      btn.classList.toggle('!text-sm', active);
+      btn.classList.toggle('chip-tool', !active);
+      btn.classList.toggle('cursor-pointer', !active);
+    };
     filters.forEach((btn) => {
       btn.addEventListener('click', () => {
         const target = btn.getAttribute('data-filter');
-        filters.forEach((b) => {
-          const active = b === btn;
-          b.classList.toggle('bg-ink', active);
-          b.classList.toggle('text-mist', active);
-          b.classList.toggle('border-ink', active);
-          b.classList.toggle('text-ash', !active);
-        });
+        filters.forEach((b) => setActive(b, b === btn));
         works.forEach((card) => {
           const tags = (card.getAttribute('data-work') || '').split(',');
           const show = target === 'all' || tags.includes(target);

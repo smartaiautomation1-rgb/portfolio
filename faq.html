@@ -5,177 +5,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>FAQ — Kenniz</title>
     <meta name="description" content="Common questions about working with Kenniz on AI automation, chatbots, voice agents, and marketing automation projects." />
-    <meta name="theme-color" content="#FAFAFA" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2309090B'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Archivo,system-ui,sans-serif' font-size='18' font-weight='800' fill='%23FAFAFA'%3EK%3C/text%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#07070a" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Archivo,sans-serif' font-size='18' font-weight='800' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{fontFamily:{display:['Archivo','system-ui','sans-serif'],body:['"Space Grotesk"','system-ui','sans-serif']},colors:{ink:'#09090B',graphite:'#18181B',ash:'#3F3F46',mist:'#FAFAFA',accent:'#2563EB','accent-hover':'#1D4ED8'}}}};</script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{display:['Archivo','system-ui','sans-serif'],body:['"Space Grotesk"','system-ui','sans-serif']},colors:{accent:'#3b82f6'}}}};</script>
   </head>
   <body class="min-h-screen">
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-mist">Skip to content</a>
+    <div class="bg-app"></div><div class="bg-grid"></div>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
 
-    <header class="fixed inset-x-4 top-4 z-40 mx-auto max-w-6xl">
-      <nav class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-white/90 px-5 py-3 shadow-sm backdrop-blur" aria-label="Primary">
-        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight"><span class="grid h-8 w-8 place-items-center rounded-lg bg-ink text-mist">K</span><span>Kenniz</span></a>
-        <ul class="hidden items-center gap-6 text-sm text-ash lg:flex">
-          <li><a href="services.html" class="transition-colors duration-200 hover:text-ink">Services</a></li>
-          <li><a href="work.html" class="transition-colors duration-200 hover:text-ink">Work</a></li>
-          <li><a href="process.html" class="transition-colors duration-200 hover:text-ink">Process</a></li>
-          <li><a href="stack.html" class="transition-colors duration-200 hover:text-ink">Stack</a></li>
-          <li><a href="faq.html" class="font-medium text-ink">FAQ</a></li>
-          <li><a href="contact.html" class="transition-colors duration-200 hover:text-ink">Contact</a></li>
-        </ul>
+    <header class="fixed inset-x-3 top-3 z-40 mx-auto max-w-6xl sm:inset-x-4 sm:top-4">
+      <nav class="glass flex items-center justify-between rounded-2xl px-4 py-3 sm:px-5" aria-label="Primary">
+        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold"><span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span><span>Kenniz</span></a>
+        <ul class="hidden items-center gap-6 text-sm lg:flex"><li><a href="services.html" class="nav-link">Services</a></li><li><a href="work.html" class="nav-link">Work</a></li><li><a href="process.html" class="nav-link">Process</a></li><li><a href="stack.html" class="nav-link">Stack</a></li><li><a href="faq.html" class="nav-link-active">FAQ</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
         <div class="flex items-center gap-3">
-          <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="hidden cursor-pointer items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-accent-hover sm:inline-flex">Hire on Upwork
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></a>
-          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border border-zinc-200 text-ink hover:border-ink lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-            <svg id="icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
-          </button>
+          <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary hidden !px-4 !py-2 !text-sm sm:inline-flex">Hire on Upwork<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></a>
+          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border lg:hidden hairline text-white" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><svg id="icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg><svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
         </div>
       </nav>
-      <div id="mobile-menu" class="mt-2 hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm lg:hidden">
-        <ul class="flex flex-col gap-1 text-base">
-          <li><a href="services.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Services</a></li>
-          <li><a href="work.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Work</a></li>
-          <li><a href="process.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Process</a></li>
-          <li><a href="stack.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Stack</a></li>
-          <li><a href="faq.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">FAQ</a></li>
-          <li><a href="contact.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Contact</a></li>
-          <li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-lg bg-accent px-3 py-2 text-center font-medium text-white hover:bg-accent-hover">Hire on Upwork</a></li>
-        </ul>
-      </div>
+      <div id="mobile-menu" class="glass mt-2 hidden rounded-2xl p-3 lg:hidden"><ul class="flex flex-col gap-1 text-base"><li><a href="services.html" class="block rounded-lg px-3 py-2 nav-link">Services</a></li><li><a href="work.html" class="block rounded-lg px-3 py-2 nav-link">Work</a></li><li><a href="process.html" class="block rounded-lg px-3 py-2 nav-link">Process</a></li><li><a href="stack.html" class="block rounded-lg px-3 py-2 nav-link">Stack</a></li><li><a href="faq.html" class="block rounded-lg px-3 py-2 nav-link">FAQ</a></li><li><a href="contact.html" class="block rounded-lg px-3 py-2 nav-link">Contact</a></li><li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-2 w-full">Hire on Upwork</a></li></ul></div>
     </header>
 
     <main id="main">
-      <section class="relative overflow-hidden px-6 pb-20 pt-40 md:pt-48">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0 grid-bg"></div>
-        <div aria-hidden="true" class="aurora pointer-events-none"></div>
+      <section class="relative px-6 pb-16 pt-36 md:pt-48">
+        <div class="aurora"></div>
         <div class="relative mx-auto max-w-4xl text-center">
-          <p class="reveal font-display text-sm font-semibold uppercase tracking-widest text-accent">FAQ</p>
-          <h1 class="reveal mt-3 font-display text-5xl font-extrabold leading-[1.05] text-ink md:text-7xl">Common questions, <span class="gradient-text">honest answers.</span></h1>
-          <p class="reveal mx-auto mt-6 max-w-2xl text-lg text-ash">If your question isn't here, ask it on the discovery call. I'd rather give a direct answer than write 20 FAQs about edge cases.</p>
+          <p class="reveal eyebrow">FAQ</p>
+          <h1 class="reveal mt-3 font-display text-5xl font-extrabold leading-[1.03] md:text-7xl"><span class="gradient-text">Common questions,</span> <span class="gradient-accent">honest answers.</span></h1>
+          <p class="reveal mx-auto mt-6 max-w-2xl text-lg text-muted">If your question isn't here, ask it on the discovery call. I'd rather give a direct answer than write 20 FAQs about edge cases.</p>
         </div>
       </section>
 
-      <section class="border-t border-zinc-200 bg-white px-6 py-24">
-        <div class="mx-auto max-w-4xl space-y-16">
+      <section class="px-6 py-12">
+        <div class="mx-auto max-w-4xl space-y-12">
           <div class="reveal">
-            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">Engagement</h2>
-            <div class="mt-6 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white">
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">How quickly can you start?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">Usually within 48 hours of the discovery call. I keep a tight pipeline so projects move fast — usually 1–2 active builds at a time.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Do you only work through Upwork?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">Upwork is my preferred channel — verified reviews, escrow, and clear contracts. For larger engagements I can also work direct via a standard MSA + SOW.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Will I own the system you build?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">Yes. All code, prompts, workflows, and documentation are handed off and yours forever. No proprietary hosting, no lock-in.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Do you sign NDAs?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">Yes — a mutual NDA is standard before sharing anything sensitive. Happy to sign yours or use a clean one.</p>
-              </details>
+            <h2 class="font-display text-2xl font-bold"><span class="gradient-accent">Engagement</span></h2>
+            <div class="mt-5 space-y-3">
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">How quickly can you start?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Usually within 48 hours of the discovery call. I keep a tight pipeline — 1–2 active builds at a time.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Do you only work through Upwork?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Upwork is preferred — verified reviews, escrow, clear contracts. For larger engagements I also work direct via a standard MSA + SOW.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Will I own the system you build?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Yes. All code, prompts, workflows, and documentation are handed off and yours forever. No proprietary hosting, no lock-in.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Do you sign NDAs?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Yes — a mutual NDA is standard before sharing anything sensitive. Happy to sign yours or use a clean one.</p></details>
             </div>
           </div>
 
           <div class="reveal">
-            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">Technical</h2>
-            <div class="mt-6 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white">
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Can you work with our existing stack?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">Almost always. I integrate with HubSpot, Salesforce, Pipedrive, Intercom, Shopify, Stripe, Slack, and dozens more. If there's an API, I can talk to it.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Where does the data live?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">In your account. n8n self-hosted on Railway/Render, vectors in your Pinecone or Supabase, LLM calls go through your OpenAI/Anthropic keys. I don't proxy your data.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">What about model costs?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">I estimate them upfront and tune for cost in the build. Most chatbots run $20–200/mo in LLM spend. Voice agents are usage-based — typically $0.08–0.15 per minute.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Is the work GDPR / SOC2 compliant?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">I build to be compliant with whatever framework you're under. EU-region inference, data residency, audit logging — all doable. For SOC2/HIPAA we'll discuss the specifics on the call.</p>
-              </details>
+            <h2 class="font-display text-2xl font-bold"><span class="gradient-accent">Technical</span></h2>
+            <div class="mt-5 space-y-3">
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Can you work with our existing stack?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Almost always. I integrate with HubSpot, Salesforce, Pipedrive, Intercom, Shopify, Stripe, Slack, and dozens more. If there's an API, I can talk to it.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Where does the data live?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">In your account. n8n self-hosted, vectors in your Pinecone or Supabase, LLM calls through your own keys. I don't proxy your data.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">What about model costs?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Estimated upfront and tuned for cost in the build. Most chatbots run $20–200/mo. Voice agents are usage-based — typically $0.08–0.15 per minute.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Is the work GDPR / SOC2 compliant?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">I build to whatever framework you're under. EU-region inference, data residency, audit logging — all doable. For SOC2/HIPAA we'll discuss specifics on the call.</p></details>
             </div>
           </div>
 
           <div class="reveal">
-            <h2 class="font-display text-3xl font-bold text-ink md:text-4xl">Pricing</h2>
-            <div class="mt-6 divide-y divide-zinc-200 rounded-2xl border border-zinc-200 bg-white">
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Fixed price or hourly?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">Almost always fixed-price, scoped tightly after the audit. You know the cost and the deliverable before we start. Hourly only for open-ended R&amp;D engagements.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">What does a typical project cost?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">AI automations start at $1,200. Chatbots at $1,800. Voice agents at $2,400. Marketing automation at $1,500. Larger or multi-system builds scope individually.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">Do you offer retainers?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">Yes — optional monthly retainer for monitoring, model upgrades, and new automations. Typically $1.5K–4K/mo depending on system count and uptime expectations.</p>
-              </details>
-              <details class="group p-6">
-                <summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold text-ink">What's the refund policy?<svg class="h-5 w-5 text-ash transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary>
-                <p class="mt-3 text-ash">If we hit a milestone and the work doesn't meet the agreed acceptance criteria, I fix it on my time. If a build is truly unsalvageable (rare), Upwork dispute resolution handles it cleanly.</p>
-              </details>
+            <h2 class="font-display text-2xl font-bold"><span class="gradient-accent">Pricing</span></h2>
+            <div class="mt-5 space-y-3">
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Fixed price or hourly?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Almost always fixed-price, scoped after the audit. You know cost and deliverable before we start. Hourly only for open-ended R&amp;D.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">What does a typical project cost?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Automations from $1,200. Chatbots $1,800. Voice agents $2,400. Marketing automation $1,500. Larger or multi-system builds scope individually.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">Do you offer retainers?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">Yes — optional monthly retainer for monitoring, model upgrades, and new automations. Typically $1.5K–4K/mo depending on scope.</p></details>
+              <details class="card group p-6"><summary class="flex cursor-pointer list-none items-center justify-between font-display text-lg font-semibold">What's the refund policy?<svg class="h-5 w-5 text-muted transition-transform duration-200 group-open:rotate-45" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16M4 12h16"/></svg></summary><p class="mt-3 text-muted">If a milestone doesn't meet the agreed acceptance criteria, I fix it on my time. For unsalvageable builds (rare), Upwork dispute resolution handles it cleanly.</p></details>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="border-t border-zinc-200 bg-mist px-6 py-24">
+      <section class="px-6 py-24">
         <div class="mx-auto max-w-4xl text-center">
-          <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">Still have questions?</p>
-          <h2 class="mt-3 font-display text-4xl font-bold text-ink md:text-5xl">Ask them on the discovery call.</h2>
-          <p class="mx-auto mt-5 max-w-2xl text-lg text-ash">30 minutes. Free. No deck. We just talk.</p>
-          <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-ink px-6 py-3 text-base font-medium text-mist hover:bg-graphite">Hire me on Upwork
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-            <a href="contact.html" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-3 text-base font-medium text-ink hover:border-ink">Other ways to reach me</a>
-          </div>
+          <p class="eyebrow">Still have questions?</p>
+          <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl"><span class="gradient-text">Ask them on the discovery call.</span></h2>
+          <p class="mx-auto mt-5 max-w-2xl text-lg text-muted">30 minutes. Free. No deck. We just talk.</p>
+          <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Hire me on Upwork<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a><a href="contact.html" class="btn btn-ghost">Other ways to reach me</a></div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-zinc-200 bg-white px-6 py-12">
+    <footer class="border-t border-white/5 px-6 py-12">
       <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
-        <div class="md:col-span-2">
-          <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight"><span class="grid h-8 w-8 place-items-center rounded-lg bg-ink text-mist">K</span><span>Kenniz</span></a>
-          <p class="mt-3 max-w-sm text-sm text-ash">Freelance AI engineer building automations, chatbots, voice agents, and marketing systems for SaaS teams.</p>
-        </div>
-        <div>
-          <h4 class="font-display text-sm font-semibold uppercase tracking-widest text-ash">Site</h4>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li><a href="services.html" class="text-ink hover:text-accent">Services</a></li>
-            <li><a href="work.html" class="text-ink hover:text-accent">Work</a></li>
-            <li><a href="process.html" class="text-ink hover:text-accent">Process</a></li>
-            <li><a href="stack.html" class="text-ink hover:text-accent">Stack</a></li>
-            <li><a href="faq.html" class="text-ink hover:text-accent">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display text-sm font-semibold uppercase tracking-widest text-ash">Contact</h4>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent">Upwork profile</a></li>
-            <li><a href="mailto:kenniz2440@gmail.com" class="text-ink hover:text-accent">kenniz2440@gmail.com</a></li>
-            <li><a href="contact.html" class="text-ink hover:text-accent">Contact page</a></li>
-          </ul>
-        </div>
+        <div class="md:col-span-2"><a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold"><span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span><span>Kenniz</span></a><p class="mt-3 max-w-sm text-sm text-muted">Freelance AI engineer building automations, chatbots, voice agents, and marketing systems for SaaS teams.</p></div>
+        <div><h4 class="eyebrow">Site</h4><ul class="mt-4 space-y-2 text-sm"><li><a href="services.html" class="nav-link">Services</a></li><li><a href="work.html" class="nav-link">Work</a></li><li><a href="process.html" class="nav-link">Process</a></li><li><a href="stack.html" class="nav-link">Stack</a></li><li><a href="faq.html" class="nav-link">FAQ</a></li></ul></div>
+        <div><h4 class="eyebrow">Contact</h4><ul class="mt-4 space-y-2 text-sm"><li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="nav-link">Upwork profile</a></li><li><a href="mailto:kenniz2440@gmail.com" class="nav-link">kenniz2440@gmail.com</a></li><li><a href="contact.html" class="nav-link">Contact page</a></li></ul></div>
       </div>
-      <div class="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-6 text-sm text-ash md:flex-row">
-        <p>&copy; <span id="year"></span> Kenniz. Built with care, shipped fast.</p>
-        <a href="#main" class="hover:text-ink">Back to top ↑</a>
-      </div>
+      <div class="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 text-sm text-muted-2 md:flex-row"><p>&copy; <span id="year"></span> Kenniz. Built with care, shipped fast.</p><a href="#main" class="nav-link">Back to top ↑</a></div>
     </footer>
-
     <script src="assets/scripts.js"></script>
   </body>
 </html>

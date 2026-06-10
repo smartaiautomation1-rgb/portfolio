@@ -5,271 +5,121 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Stack — Kenniz</title>
     <meta name="description" content="The AI, workflow, voice, and marketing tools Kenniz uses to ship production systems for SaaS teams." />
-    <meta name="theme-color" content="#FAFAFA" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2309090B'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Archivo,system-ui,sans-serif' font-size='18' font-weight='800' fill='%23FAFAFA'%3EK%3C/text%3E%3C/svg%3E" />
+    <meta name="theme-color" content="#07070a" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Archivo,sans-serif' font-size='18' font-weight='800' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{fontFamily:{display:['Archivo','system-ui','sans-serif'],body:['"Space Grotesk"','system-ui','sans-serif']},colors:{ink:'#09090B',graphite:'#18181B',ash:'#3F3F46',mist:'#FAFAFA',accent:'#2563EB','accent-hover':'#1D4ED8'}}}};</script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{display:['Archivo','system-ui','sans-serif'],body:['"Space Grotesk"','system-ui','sans-serif']},colors:{accent:'#3b82f6'}}}};</script>
   </head>
   <body class="min-h-screen">
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-mist">Skip to content</a>
+    <div class="bg-app"></div><div class="bg-grid"></div>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
 
-    <header class="fixed inset-x-4 top-4 z-40 mx-auto max-w-6xl">
-      <nav class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-white/90 px-5 py-3 shadow-sm backdrop-blur" aria-label="Primary">
-        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight"><span class="grid h-8 w-8 place-items-center rounded-lg bg-ink text-mist">K</span><span>Kenniz</span></a>
-        <ul class="hidden items-center gap-6 text-sm text-ash lg:flex">
-          <li><a href="services.html" class="transition-colors duration-200 hover:text-ink">Services</a></li>
-          <li><a href="work.html" class="transition-colors duration-200 hover:text-ink">Work</a></li>
-          <li><a href="process.html" class="transition-colors duration-200 hover:text-ink">Process</a></li>
-          <li><a href="stack.html" class="font-medium text-ink">Stack</a></li>
-          <li><a href="faq.html" class="transition-colors duration-200 hover:text-ink">FAQ</a></li>
-          <li><a href="contact.html" class="transition-colors duration-200 hover:text-ink">Contact</a></li>
-        </ul>
+    <header class="fixed inset-x-3 top-3 z-40 mx-auto max-w-6xl sm:inset-x-4 sm:top-4">
+      <nav class="glass flex items-center justify-between rounded-2xl px-4 py-3 sm:px-5" aria-label="Primary">
+        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold"><span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span><span>Kenniz</span></a>
+        <ul class="hidden items-center gap-6 text-sm lg:flex"><li><a href="services.html" class="nav-link">Services</a></li><li><a href="work.html" class="nav-link">Work</a></li><li><a href="process.html" class="nav-link">Process</a></li><li><a href="stack.html" class="nav-link-active">Stack</a></li><li><a href="faq.html" class="nav-link">FAQ</a></li><li><a href="contact.html" class="nav-link">Contact</a></li></ul>
         <div class="flex items-center gap-3">
-          <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="hidden cursor-pointer items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-accent-hover sm:inline-flex">Hire on Upwork
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></a>
-          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border border-zinc-200 text-ink hover:border-ink lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-            <svg id="icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
-          </button>
+          <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary hidden !px-4 !py-2 !text-sm sm:inline-flex">Hire on Upwork<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></a>
+          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border lg:hidden hairline text-white" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><svg id="icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg><svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg></button>
         </div>
       </nav>
-      <div id="mobile-menu" class="mt-2 hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm lg:hidden">
-        <ul class="flex flex-col gap-1 text-base">
-          <li><a href="services.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Services</a></li>
-          <li><a href="work.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Work</a></li>
-          <li><a href="process.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Process</a></li>
-          <li><a href="stack.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Stack</a></li>
-          <li><a href="faq.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">FAQ</a></li>
-          <li><a href="contact.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Contact</a></li>
-          <li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-lg bg-accent px-3 py-2 text-center font-medium text-white hover:bg-accent-hover">Hire on Upwork</a></li>
-        </ul>
-      </div>
+      <div id="mobile-menu" class="glass mt-2 hidden rounded-2xl p-3 lg:hidden"><ul class="flex flex-col gap-1 text-base"><li><a href="services.html" class="block rounded-lg px-3 py-2 nav-link">Services</a></li><li><a href="work.html" class="block rounded-lg px-3 py-2 nav-link">Work</a></li><li><a href="process.html" class="block rounded-lg px-3 py-2 nav-link">Process</a></li><li><a href="stack.html" class="block rounded-lg px-3 py-2 nav-link">Stack</a></li><li><a href="faq.html" class="block rounded-lg px-3 py-2 nav-link">FAQ</a></li><li><a href="contact.html" class="block rounded-lg px-3 py-2 nav-link">Contact</a></li><li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-2 w-full">Hire on Upwork</a></li></ul></div>
     </header>
 
     <main id="main">
-      <section class="relative overflow-hidden px-6 pb-20 pt-40 md:pt-48">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0 grid-bg"></div>
-        <div aria-hidden="true" class="aurora pointer-events-none"></div>
+      <section class="relative px-6 pb-16 pt-36 md:pt-48">
+        <div class="aurora"></div>
         <div class="relative mx-auto max-w-4xl text-center">
-          <p class="reveal font-display text-sm font-semibold uppercase tracking-widest text-accent">Stack</p>
-          <h1 class="reveal mt-3 font-display text-5xl font-extrabold leading-[1.05] text-ink md:text-7xl">Tools I <span class="gradient-text">trust in production.</span></h1>
-          <p class="reveal mx-auto mt-6 max-w-2xl text-lg text-ash">Battle-tested across 120+ engagements. I pick the right tool for the job — not the one I want to charge you for. Everything here is something I've shipped to a paying customer in the last 12 months.</p>
+          <p class="reveal eyebrow">Stack</p>
+          <h1 class="reveal mt-3 font-display text-5xl font-extrabold leading-[1.03] md:text-7xl"><span class="gradient-text">Tools I</span> <span class="gradient-accent">trust in production.</span></h1>
+          <p class="reveal mx-auto mt-6 max-w-2xl text-lg text-muted">Battle-tested across 120+ engagements. I pick the right tool for the job — not the one I want to charge you for. Everything here I've shipped to a paying customer in the last 12 months.</p>
         </div>
       </section>
 
-      <section class="border-t border-zinc-200 bg-white px-6 py-20">
-        <div class="mx-auto max-w-6xl">
-          <div class="reveal mb-12 flex items-end justify-between gap-4">
-            <div>
-              <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-ash">LLM &amp; AI</span>
-              <h2 class="mt-3 font-display text-3xl font-bold text-ink md:text-4xl">The brains.</h2>
-            </div>
-            <p class="hidden max-w-md text-sm text-ash md:block">Frontier models for reasoning + lightweight models for cost. I pick per-task, not per-vendor.</p>
-          </div>
-          <div class="reveal grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <img src="https://cdn.simpleicons.org/openai/09090b" alt="OpenAI" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">OpenAI</p>
-              <p class="text-center text-xs text-ash">GPT-4o, o-series, embeddings</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <img src="https://cdn.simpleicons.org/anthropic/09090b" alt="Anthropic" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">Anthropic</p>
-              <p class="text-center text-xs text-ash">Claude for nuance &amp; safety</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <img src="https://cdn.simpleicons.org/elevenlabs/09090b" alt="ElevenLabs" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">ElevenLabs</p>
-              <p class="text-center text-xs text-ash">Lifelike TTS for voice</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <img src="https://cdn.simpleicons.org/pinecone/09090b" alt="Pinecone" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">Pinecone</p>
-              <p class="text-center text-xs text-ash">Managed vector DB for RAG</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="border-t border-zinc-200 bg-mist px-6 py-20">
-        <div class="mx-auto max-w-6xl">
-          <div class="reveal mb-12 flex items-end justify-between gap-4">
-            <div>
-              <span class="rounded-full bg-white px-3 py-1 text-xs font-medium text-ash">Workflow</span>
-              <h2 class="mt-3 font-display text-3xl font-bold text-ink md:text-4xl">The wiring.</h2>
-            </div>
-            <p class="hidden max-w-md text-sm text-ash md:block">No-code for speed, code when no-code starts holding the system back.</p>
-          </div>
-          <div class="reveal grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <img src="https://cdn.simpleicons.org/n8n/09090b" alt="n8n" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">n8n</p>
-              <p class="text-center text-xs text-ash">Self-hosted, code-friendly</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <img src="https://cdn.simpleicons.org/zapier/09090b" alt="Zapier" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">Zapier</p>
-              <p class="text-center text-xs text-ash">Quickest path to v1</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <div class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-mist font-mono text-sm font-bold">M</div>
-              <p class="font-display text-sm font-semibold text-ink">Make</p>
-              <p class="text-center text-xs text-ash">Complex branching logic</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <img src="https://cdn.simpleicons.org/nodedotjs/09090b" alt="Node.js" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">Node.js / Python</p>
-              <p class="text-center text-xs text-ash">When code is the right tool</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="border-t border-zinc-200 bg-white px-6 py-20">
-        <div class="mx-auto max-w-6xl">
-          <div class="reveal mb-12 flex items-end justify-between gap-4">
-            <div>
-              <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-ash">Voice &amp; Chat</span>
-              <h2 class="mt-3 font-display text-3xl font-bold text-ink md:text-4xl">The interface.</h2>
-            </div>
-            <p class="hidden max-w-md text-sm text-ash md:block">Where the AI meets your customer. Latency-tuned, channel-aware.</p>
-          </div>
-          <div class="reveal grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <div class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-mist font-mono text-sm font-bold">VAPI</div>
-              <p class="font-display text-sm font-semibold text-ink">VAPI</p>
-              <p class="text-center text-xs text-ash">Fastest voice agent stack</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <div class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-mist font-mono text-sm font-bold">B</div>
-              <p class="font-display text-sm font-semibold text-ink">Bland · Retell</p>
-              <p class="text-center text-xs text-ash">High-volume outbound</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <img src="https://cdn.simpleicons.org/twilio/09090b" alt="Twilio" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">Twilio</p>
-              <p class="text-center text-xs text-ash">PSTN, SMS, WhatsApp</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-mist p-6">
-              <img src="https://cdn.simpleicons.org/whatsapp/09090b" alt="WhatsApp" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">WhatsApp Business</p>
-              <p class="text-center text-xs text-ash">Official cloud API</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="border-t border-zinc-200 bg-mist px-6 py-20">
-        <div class="mx-auto max-w-6xl">
-          <div class="reveal mb-12 flex items-end justify-between gap-4">
-            <div>
-              <span class="rounded-full bg-white px-3 py-1 text-xs font-medium text-ash">Marketing &amp; CRM</span>
-              <h2 class="mt-3 font-display text-3xl font-bold text-ink md:text-4xl">The flywheel.</h2>
-            </div>
-            <p class="hidden max-w-md text-sm text-ash md:block">Lifecycle, outbound, attribution. Where revenue is unlocked.</p>
-          </div>
-          <div class="reveal grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <img src="https://cdn.simpleicons.org/hubspot/09090b" alt="HubSpot" class="h-10" />
-              <p class="font-display text-sm font-semibold text-ink">HubSpot</p>
-              <p class="text-center text-xs text-ash">CRM + lifecycle automation</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <div class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-mist font-mono text-sm font-bold">Cio</div>
-              <p class="font-display text-sm font-semibold text-ink">Customer.io</p>
-              <p class="text-center text-xs text-ash">Behavioral messaging</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <div class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-mist font-mono text-sm font-bold">AC</div>
-              <p class="font-display text-sm font-semibold text-ink">ActiveCampaign</p>
-              <p class="text-center text-xs text-ash">SMB-friendly automation</p>
-            </div>
-            <div class="tilt-card flex flex-col items-center gap-3 rounded-2xl border border-zinc-200 bg-white p-6">
-              <div class="grid h-10 w-10 place-items-center rounded-lg bg-ink text-mist font-mono text-sm font-bold">I·A</div>
-              <p class="font-display text-sm font-semibold text-ink">Instantly · Apollo</p>
-              <p class="text-center text-xs text-ash">Cold outbound + enrichment</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="border-t border-zinc-200 bg-ink px-6 py-24 text-mist">
-        <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.4fr]">
+      <section class="px-6 py-12">
+        <div class="mx-auto max-w-6xl space-y-8">
+          <!-- LLM -->
           <div class="reveal">
-            <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">Why this stack</p>
-            <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl">Pragmatic, not religious.</h2>
-            <p class="mt-4 text-zinc-400">I have opinions, not allegiances. The right tool depends on volume, team skill, budget, and what's already in your stack.</p>
+            <div class="mb-5 flex items-end justify-between gap-4"><div><span class="chip">LLM &amp; AI</span><h2 class="mt-3 font-display text-3xl font-bold">The brains.</h2></div><p class="hidden max-w-md text-sm text-muted md:block">Frontier models for reasoning, lightweight models for cost. Picked per-task, not per-vendor.</p></div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/openai/ffffff" alt="OpenAI" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">OpenAI</p><p class="text-center text-xs text-muted">GPT-4o, o-series</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/anthropic/ffffff" alt="Anthropic" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">Anthropic</p><p class="text-center text-xs text-muted">Claude for nuance</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/elevenlabs/ffffff" alt="ElevenLabs" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">ElevenLabs</p><p class="text-center text-xs text-muted">Lifelike TTS</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/pinecone/ffffff" alt="Pinecone" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">Pinecone</p><p class="text-center text-xs text-muted">Vector DB for RAG</p></div>
+            </div>
           </div>
-          <ul class="reveal grid gap-4 sm:grid-cols-2">
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 class="font-display text-lg font-bold">Self-hosted by default</h3>
-              <p class="mt-2 text-sm text-zinc-400">When data sensitivity matters. n8n on Railway/Render keeps your data in your account.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 class="font-display text-lg font-bold">Frontier when it earns it</h3>
-              <p class="mt-2 text-sm text-zinc-400">GPT-4o or Claude for high-stakes reasoning. Smaller models for the 80% of tasks that don't need a Ferrari.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 class="font-display text-lg font-bold">No-code → code escape hatch</h3>
-              <p class="mt-2 text-sm text-zinc-400">Start fast in n8n. If we hit the ceiling, I rewrite the hot path in Node or Python.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <h3 class="font-display text-lg font-bold">Observability from day one</h3>
-              <p class="mt-2 text-sm text-zinc-400">Logs, traces, cost dashboards. You should know what every dollar of LLM spend bought you.</p>
-            </li>
-          </ul>
+          <!-- Workflow -->
+          <div class="reveal">
+            <div class="mb-5 flex items-end justify-between gap-4"><div><span class="chip">Workflow</span><h2 class="mt-3 font-display text-3xl font-bold">The wiring.</h2></div><p class="hidden max-w-md text-sm text-muted md:block">No-code for speed, code when no-code starts holding the system back.</p></div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/n8n/ffffff" alt="n8n" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">n8n</p><p class="text-center text-xs text-muted">Self-hosted</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/zapier/ffffff" alt="Zapier" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">Zapier</p><p class="text-center text-xs text-muted">Quickest v1</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><div class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 font-mono text-sm font-bold">M</div><p class="font-display text-sm font-semibold">Make</p><p class="text-center text-xs text-muted">Complex branching</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt="Node.js" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">Node / Python</p><p class="text-center text-xs text-muted">When code wins</p></div>
+            </div>
+          </div>
+          <!-- Voice -->
+          <div class="reveal">
+            <div class="mb-5 flex items-end justify-between gap-4"><div><span class="chip">Voice &amp; Chat</span><h2 class="mt-3 font-display text-3xl font-bold">The interface.</h2></div><p class="hidden max-w-md text-sm text-muted md:block">Where the AI meets your customer. Latency-tuned, channel-aware.</p></div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><div class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 font-mono text-xs font-bold">VAPI</div><p class="font-display text-sm font-semibold">VAPI</p><p class="text-center text-xs text-muted">Fastest voice stack</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><div class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 font-mono text-sm font-bold">B</div><p class="font-display text-sm font-semibold">Bland · Retell</p><p class="text-center text-xs text-muted">High-volume outbound</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/twilio/ffffff" alt="Twilio" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">Twilio</p><p class="text-center text-xs text-muted">PSTN, SMS</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="WhatsApp" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">WhatsApp</p><p class="text-center text-xs text-muted">Official cloud API</p></div>
+            </div>
+          </div>
+          <!-- Marketing -->
+          <div class="reveal">
+            <div class="mb-5 flex items-end justify-between gap-4"><div><span class="chip">Marketing &amp; CRM</span><h2 class="mt-3 font-display text-3xl font-bold">The flywheel.</h2></div><p class="hidden max-w-md text-sm text-muted md:block">Lifecycle, outbound, attribution. Where revenue is unlocked.</p></div>
+            <div class="grid grid-cols-2 gap-4 sm:grid-cols-4">
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><img src="https://cdn.simpleicons.org/hubspot/ffffff" alt="HubSpot" class="h-9 opacity-90" /><p class="font-display text-sm font-semibold">HubSpot</p><p class="text-center text-xs text-muted">CRM + lifecycle</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><div class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 font-mono text-xs font-bold">Cio</div><p class="font-display text-sm font-semibold">Customer.io</p><p class="text-center text-xs text-muted">Behavioral msgs</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><div class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 font-mono text-xs font-bold">AC</div><p class="font-display text-sm font-semibold">ActiveCampaign</p><p class="text-center text-xs text-muted">SMB automation</p></div>
+              <div class="card card-hover flex flex-col items-center gap-3 p-6"><div class="grid h-9 w-9 place-items-center rounded-lg bg-white/10 font-mono text-xs font-bold">I·A</div><p class="font-display text-sm font-semibold">Instantly · Apollo</p><p class="text-center text-xs text-muted">Outbound + enrich</p></div>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section class="border-t border-zinc-200 bg-mist px-6 py-24">
-        <div class="mx-auto max-w-4xl text-center">
-          <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">Let's build</p>
-          <h2 class="mt-3 font-display text-4xl font-bold text-ink md:text-5xl">Got a tool not on this list?</h2>
-          <p class="mx-auto mt-5 max-w-2xl text-lg text-ash">Probably worked with it. The stack above is the short list — there's always more. Tell me what you've got and I'll tell you how to make it work harder.</p>
-          <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-ink px-6 py-3 text-base font-medium text-mist hover:bg-graphite">Hire me on Upwork
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
-            <a href="contact.html" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-3 text-base font-medium text-ink hover:border-ink">Other ways to reach me</a>
+      <section class="px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <div class="reveal card card-grad relative overflow-hidden rounded-3xl p-8 md:p-12">
+            <div class="aurora !opacity-40"></div>
+            <div class="relative grid gap-10 lg:grid-cols-[1fr_1.3fr]">
+              <div><p class="eyebrow">Why this stack</p><h2 class="mt-3 font-display text-4xl font-bold md:text-5xl"><span class="gradient-text">Pragmatic, not religious.</span></h2><p class="mt-4 text-muted">I have opinions, not allegiances. The right tool depends on volume, team skill, budget, and what's already in your stack.</p></div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div class="card p-5"><h3 class="font-display text-lg font-bold">Self-hosted by default</h3><p class="mt-2 text-sm text-muted">n8n on Railway/Render keeps your data in your account.</p></div>
+                <div class="card p-5"><h3 class="font-display text-lg font-bold">Frontier when it earns it</h3><p class="mt-2 text-sm text-muted">GPT-4o/Claude for high-stakes; smaller models for the rest.</p></div>
+                <div class="card p-5"><h3 class="font-display text-lg font-bold">No-code → code escape hatch</h3><p class="mt-2 text-sm text-muted">Start fast in n8n; rewrite the hot path in Node when needed.</p></div>
+                <div class="card p-5"><h3 class="font-display text-lg font-bold">Observability day one</h3><p class="mt-2 text-sm text-muted">Logs, traces, cost dashboards. Know what every dollar bought.</p></div>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section class="px-6 py-24">
+        <div class="mx-auto max-w-4xl text-center">
+          <p class="eyebrow">Let's build</p>
+          <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl"><span class="gradient-text">Got a tool not on this list?</span></h2>
+          <p class="mx-auto mt-5 max-w-2xl text-lg text-muted">Probably worked with it. Tell me what you've got and I'll tell you how to make it work harder.</p>
+          <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row"><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Hire me on Upwork<svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a><a href="contact.html" class="btn btn-ghost">Other ways to reach me</a></div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-zinc-200 bg-white px-6 py-12">
+    <footer class="border-t border-white/5 px-6 py-12">
       <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
-        <div class="md:col-span-2">
-          <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight"><span class="grid h-8 w-8 place-items-center rounded-lg bg-ink text-mist">K</span><span>Kenniz</span></a>
-          <p class="mt-3 max-w-sm text-sm text-ash">Freelance AI engineer building automations, chatbots, voice agents, and marketing systems for SaaS teams.</p>
-        </div>
-        <div>
-          <h4 class="font-display text-sm font-semibold uppercase tracking-widest text-ash">Site</h4>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li><a href="services.html" class="text-ink hover:text-accent">Services</a></li>
-            <li><a href="work.html" class="text-ink hover:text-accent">Work</a></li>
-            <li><a href="process.html" class="text-ink hover:text-accent">Process</a></li>
-            <li><a href="stack.html" class="text-ink hover:text-accent">Stack</a></li>
-            <li><a href="faq.html" class="text-ink hover:text-accent">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display text-sm font-semibold uppercase tracking-widest text-ash">Contact</h4>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent">Upwork profile</a></li>
-            <li><a href="mailto:kenniz2440@gmail.com" class="text-ink hover:text-accent">kenniz2440@gmail.com</a></li>
-            <li><a href="contact.html" class="text-ink hover:text-accent">Contact page</a></li>
-          </ul>
-        </div>
+        <div class="md:col-span-2"><a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold"><span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span><span>Kenniz</span></a><p class="mt-3 max-w-sm text-sm text-muted">Freelance AI engineer building automations, chatbots, voice agents, and marketing systems for SaaS teams.</p></div>
+        <div><h4 class="eyebrow">Site</h4><ul class="mt-4 space-y-2 text-sm"><li><a href="services.html" class="nav-link">Services</a></li><li><a href="work.html" class="nav-link">Work</a></li><li><a href="process.html" class="nav-link">Process</a></li><li><a href="stack.html" class="nav-link">Stack</a></li><li><a href="faq.html" class="nav-link">FAQ</a></li></ul></div>
+        <div><h4 class="eyebrow">Contact</h4><ul class="mt-4 space-y-2 text-sm"><li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="nav-link">Upwork profile</a></li><li><a href="mailto:kenniz2440@gmail.com" class="nav-link">kenniz2440@gmail.com</a></li><li><a href="contact.html" class="nav-link">Contact page</a></li></ul></div>
       </div>
-      <div class="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-6 text-sm text-ash md:flex-row">
-        <p>&copy; <span id="year"></span> Kenniz. Built with care, shipped fast.</p>
-        <a href="#main" class="hover:text-ink">Back to top ↑</a>
-      </div>
+      <div class="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 text-sm text-muted-2 md:flex-row"><p>&copy; <span id="year"></span> Kenniz. Built with care, shipped fast.</p><a href="#main" class="nav-link">Back to top ↑</a></div>
     </footer>
-
     <script src="assets/scripts.js"></script>
   </body>
 </html>

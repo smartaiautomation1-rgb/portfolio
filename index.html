@@ -4,384 +4,296 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Kenniz — AI Automation, Chatbots &amp; Voice Agents</title>
-    <meta
-      name="description"
-      content="Freelance AI engineer building automations, chatbots, voice calling agents, and marketing systems for SaaS founders and growth teams. Hire on Upwork."
-    />
-    <meta name="theme-color" content="#FAFAFA" />
-
+    <meta name="description" content="Freelance AI engineer building automations, chatbots, voice calling agents, and marketing systems for SaaS founders and growth teams. Hire on Upwork." />
+    <meta name="theme-color" content="#07070a" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Kenniz — AI Automation, Chatbots & Voice Agents" />
     <meta property="og:description" content="Freelance AI engineer. Automations, chatbots, voice agents, and marketing systems that ship in days." />
     <meta property="og:url" content="https://upwork.com/freelancers/kenniz" />
     <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2309090B'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Archivo,system-ui,sans-serif' font-size='18' font-weight='800' fill='%23FAFAFA'%3EK%3C/text%3E%3C/svg%3E" />
-
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Archivo,sans-serif' font-size='18' font-weight='800' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/styles.css" />
-
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: { display: ['Archivo','system-ui','sans-serif'], body: ['"Space Grotesk"','system-ui','sans-serif'] },
-            colors: { ink:'#09090B', graphite:'#18181B', ash:'#3F3F46', mist:'#FAFAFA', accent:'#2563EB', 'accent-hover':'#1D4ED8' }
-          }
-        }
-      };
-    </script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{display:['Archivo','system-ui','sans-serif'],body:['"Space Grotesk"','system-ui','sans-serif']},colors:{accent:'#3b82f6'}}}};</script>
   </head>
 
   <body class="min-h-screen">
-    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-ink focus:px-4 focus:py-2 focus:text-mist">Skip to content</a>
+    <div class="bg-app"></div>
+    <div class="bg-grid"></div>
+    <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
 
-    <header class="fixed inset-x-4 top-4 z-40 mx-auto max-w-6xl">
-      <nav class="flex items-center justify-between rounded-2xl border border-zinc-200 bg-white/90 px-5 py-3 shadow-sm backdrop-blur" aria-label="Primary">
-        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
-          <span class="grid h-8 w-8 place-items-center rounded-lg bg-ink text-mist">K</span>
+    <!-- NAV -->
+    <header class="fixed inset-x-3 top-3 z-40 mx-auto max-w-6xl sm:inset-x-4 sm:top-4">
+      <nav class="glass flex items-center justify-between rounded-2xl px-4 py-3 sm:px-5" aria-label="Primary">
+        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold">
+          <span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span>
           <span>Kenniz</span>
         </a>
-        <ul class="hidden items-center gap-6 text-sm text-ash lg:flex">
-          <li><a href="services.html" class="transition-colors duration-200 hover:text-ink">Services</a></li>
-          <li><a href="work.html" class="transition-colors duration-200 hover:text-ink">Work</a></li>
-          <li><a href="process.html" class="transition-colors duration-200 hover:text-ink">Process</a></li>
-          <li><a href="stack.html" class="transition-colors duration-200 hover:text-ink">Stack</a></li>
-          <li><a href="faq.html" class="transition-colors duration-200 hover:text-ink">FAQ</a></li>
-          <li><a href="contact.html" class="transition-colors duration-200 hover:text-ink">Contact</a></li>
+        <ul class="hidden items-center gap-6 text-sm lg:flex">
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="work.html" class="nav-link">Work</a></li>
+          <li><a href="process.html" class="nav-link">Process</a></li>
+          <li><a href="stack.html" class="nav-link">Stack</a></li>
+          <li><a href="faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
         <div class="flex items-center gap-3">
-          <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="hidden cursor-pointer items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-white transition-colors duration-200 hover:bg-accent-hover focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2 sm:inline-flex">
-            Hire on Upwork
-            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg>
-          </a>
-          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border border-zinc-200 text-ink transition-colors duration-200 hover:border-ink focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 lg:hidden" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-            <svg id="icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
+          <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary hidden !px-4 !py-2 !text-sm sm:inline-flex">Hire on Upwork
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></a>
+          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border lg:hidden hairline text-white" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+            <svg id="icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+            <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
           </button>
         </div>
       </nav>
-      <div id="mobile-menu" class="mt-2 hidden rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm lg:hidden">
+      <div id="mobile-menu" class="glass mt-2 hidden rounded-2xl p-3 lg:hidden">
         <ul class="flex flex-col gap-1 text-base">
-          <li><a href="services.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Services</a></li>
-          <li><a href="work.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Work</a></li>
-          <li><a href="process.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Process</a></li>
-          <li><a href="stack.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Stack</a></li>
-          <li><a href="faq.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">FAQ</a></li>
-          <li><a href="contact.html" class="block rounded-lg px-3 py-2 text-ink hover:bg-zinc-100">Contact</a></li>
-          <li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="mt-2 block rounded-lg bg-accent px-3 py-2 text-center font-medium text-white hover:bg-accent-hover">Hire on Upwork</a></li>
+          <li><a href="services.html" class="block rounded-lg px-3 py-2 nav-link">Services</a></li>
+          <li><a href="work.html" class="block rounded-lg px-3 py-2 nav-link">Work</a></li>
+          <li><a href="process.html" class="block rounded-lg px-3 py-2 nav-link">Process</a></li>
+          <li><a href="stack.html" class="block rounded-lg px-3 py-2 nav-link">Stack</a></li>
+          <li><a href="faq.html" class="block rounded-lg px-3 py-2 nav-link">FAQ</a></li>
+          <li><a href="contact.html" class="block rounded-lg px-3 py-2 nav-link">Contact</a></li>
+          <li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary mt-2 w-full">Hire on Upwork</a></li>
         </ul>
       </div>
     </header>
 
     <main id="main">
-      <section class="relative overflow-hidden px-6 pb-28 pt-40 md:pt-52">
-        <div aria-hidden="true" class="pointer-events-none absolute inset-0 grid-bg"></div>
-        <div aria-hidden="true" class="aurora pointer-events-none"></div>
-
-        <div class="relative mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[1.2fr_1fr]">
+      <!-- HERO -->
+      <section class="relative px-6 pb-24 pt-36 md:pt-48">
+        <div class="aurora"></div>
+        <div class="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.15fr_1fr]">
           <div>
-            <div class="reveal inline-flex items-center gap-2 rounded-full border border-zinc-200 bg-white px-3 py-1 text-xs font-medium text-ash">
-              <span class="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500"></span>
-              Available for new projects · Top Rated on Upwork
-            </div>
-            <h1 class="reveal mt-6 max-w-3xl font-display text-5xl font-extrabold leading-[1.04] text-ink md:text-7xl">
-              AI systems that <span class="gradient-text">ship in days</span> — not quarters.
+            <div class="reveal chip"><span class="status-dot"></span> Available for new projects · Top Rated on Upwork</div>
+            <h1 class="reveal mt-6 font-display text-5xl font-extrabold leading-[1.02] md:text-7xl">
+              <span class="gradient-text">AI systems that</span><br /><span class="gradient-accent">ship in days.</span>
             </h1>
-            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-ash md:text-xl">
-              I'm Kenniz. I help SaaS founders and growth teams turn repetitive work into autonomous systems —
-              automations, chatbots, voice agents, and marketing pipelines that compound while you sleep.
+            <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
+              I'm Kenniz — I turn repetitive work into autonomous systems. Automations, chatbots, voice agents, and marketing pipelines that run while you sleep.
             </p>
-            <div class="reveal mt-10 flex flex-col gap-3 sm:flex-row">
-              <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-ink px-6 py-3 text-base font-medium text-mist transition-colors duration-200 hover:bg-graphite focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2">
-                Hire me on Upwork
-                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-              </a>
-              <a href="work.html" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-3 text-base font-medium text-ink transition-colors duration-200 hover:border-ink focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2">
-                See recent work
-              </a>
+            <div class="reveal mt-9 flex flex-col gap-3 sm:flex-row">
+              <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Hire me on Upwork
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+              <a href="work.html" class="btn btn-ghost">See recent work</a>
+            </div>
+            <div class="reveal mt-12 flex flex-wrap items-center gap-x-8 gap-y-4">
+              <div><div class="num text-2xl">120+</div><div class="text-xs text-muted-2">Automations shipped</div></div>
+              <div class="h-8 w-px bg-white/10"></div>
+              <div><div class="num text-2xl">7 days</div><div class="text-xs text-muted-2">Avg. delivery</div></div>
+              <div class="h-8 w-px bg-white/10"></div>
+              <div><div class="num text-2xl">5.0 ★</div><div class="text-xs text-muted-2">Upwork rating</div></div>
             </div>
           </div>
 
+          <!-- Floating code card -->
           <div class="reveal relative hidden lg:block">
-            <div aria-hidden="true" class="absolute -inset-10 glow"></div>
-            <div class="relative gradient-border tilt-card rounded-2xl p-6 shadow-xl shadow-zinc-200/60">
-              <div class="flex items-center gap-2 border-b border-zinc-100 pb-3">
-                <span class="h-2.5 w-2.5 rounded-full bg-red-400"></span>
-                <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
-                <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
-                <span class="ml-2 font-mono text-xs text-ash">kenniz @ workflow.run</span>
+            <div class="card card-grad code-card rounded-2xl p-6">
+              <div class="flex items-center gap-2 border-b border-white/10 pb-3">
+                <span class="h-2.5 w-2.5 rounded-full bg-red-400/80"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-amber-400/80"></span>
+                <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/80"></span>
+                <span class="ml-2 font-mono text-xs text-muted-2">trial-recovery.agent.ts</span>
               </div>
-              <pre class="mt-4 overflow-x-auto font-mono text-[13px] leading-6 text-ink"><span class="text-zinc-400">// Day-11 trial recovery agent</span>
-<span class="text-accent">const</span> agent = <span class="text-accent">await</span> vapi.createAgent({
-  voice: <span class="text-emerald-600">"calm-female-en"</span>,
-  prompt: trialRecoveryPrompt(user),
-  tools: [bookDemo, sendDiscount]
+              <pre class="mt-4 overflow-x-auto text-[13px] leading-6"><span class="tok-com">// Day-11 voice agent recovers churned trials</span>
+<span class="tok-key">const</span> agent = <span class="tok-key">await</span> <span class="tok-fn">vapi</span>.create({
+  voice: <span class="tok-str">"calm-en-female"</span>,
+  prompt: <span class="tok-fn">trialRecovery</span>(user),
+  tools: [bookDemo, sendOffer],
 });
 
-<span class="text-accent">await</span> agent.call(user.phone);
-<span class="text-zinc-400">// → 18% reactivation, +$42K MRR</span></pre>
+<span class="tok-key">await</span> agent.<span class="tok-fn">call</span>(user.phone);
+<span class="tok-com">// → 18% reactivation, +$42K MRR</span></pre>
               <div class="mt-5 flex flex-wrap gap-2">
-                <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs text-ash">VAPI</span>
-                <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs text-ash">GPT-4o</span>
-                <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs text-ash">HubSpot</span>
-                <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs text-ash">Twilio</span>
+                <span class="chip-tool">VAPI</span><span class="chip-tool">GPT-4o</span><span class="chip-tool">HubSpot</span><span class="chip-tool">Twilio</span>
               </div>
+            </div>
+            <div class="card card-glow absolute -bottom-6 -left-8 w-44 rounded-xl p-4">
+              <div class="text-xs text-muted-2">Reactivation</div>
+              <div class="num mt-1 text-3xl gradient-accent">+18%</div>
             </div>
           </div>
         </div>
-
-        <dl class="reveal relative mx-auto mt-20 grid max-w-6xl grid-cols-2 gap-6 border-t border-zinc-200 pt-10 md:grid-cols-4">
-          <div><dt class="text-sm text-ash">Automations shipped</dt><dd class="mt-1 num-chip text-3xl text-ink">120+</dd></div>
-          <div><dt class="text-sm text-ash">Avg. delivery</dt><dd class="mt-1 num-chip text-3xl text-ink">7 days</dd></div>
-          <div><dt class="text-sm text-ash">Client retention</dt><dd class="mt-1 num-chip text-3xl text-ink">92%</dd></div>
-          <div><dt class="text-sm text-ash">Upwork rating</dt><dd class="mt-1 num-chip text-3xl text-ink">5.0 ★</dd></div>
-        </dl>
       </section>
 
-      <section class="border-y border-zinc-200 bg-white px-6 py-12">
-        <div class="mx-auto max-w-6xl">
-          <p class="text-center text-xs font-semibold uppercase tracking-widest text-ash">Built with the tools your team already loves</p>
+      <!-- LOGO MARQUEE -->
+      <section class="border-y border-white/5 py-10">
+        <div class="mx-auto max-w-6xl px-6">
+          <p class="text-center text-xs font-semibold uppercase tracking-[0.18em] text-muted-2">Production-grade tools, shipped to paying customers</p>
           <div class="marquee mt-6">
             <div class="marquee-track">
-              <div class="flex items-center gap-12 px-6 py-2 grayscale opacity-70">
-                <img src="https://cdn.simpleicons.org/openai/09090b" alt="OpenAI" class="h-7" />
-                <img src="https://cdn.simpleicons.org/anthropic/09090b" alt="Anthropic" class="h-7" />
-                <img src="https://cdn.simpleicons.org/n8n/09090b" alt="n8n" class="h-7" />
-                <img src="https://cdn.simpleicons.org/zapier/09090b" alt="Zapier" class="h-7" />
-                <img src="https://cdn.simpleicons.org/hubspot/09090b" alt="HubSpot" class="h-7" />
-                <img src="https://cdn.simpleicons.org/twilio/09090b" alt="Twilio" class="h-7" />
-                <img src="https://cdn.simpleicons.org/slack/09090b" alt="Slack" class="h-7" />
-                <img src="https://cdn.simpleicons.org/whatsapp/09090b" alt="WhatsApp" class="h-7" />
-                <img src="https://cdn.simpleicons.org/shopify/09090b" alt="Shopify" class="h-7" />
-                <img src="https://cdn.simpleicons.org/stripe/09090b" alt="Stripe" class="h-7" />
-                <img src="https://cdn.simpleicons.org/vercel/09090b" alt="Vercel" class="h-7" />
-                <img src="https://cdn.simpleicons.org/supabase/09090b" alt="Supabase" class="h-7" />
+              <div class="flex items-center gap-12 px-6">
+                <img src="https://cdn.simpleicons.org/openai" alt="OpenAI" class="logo-img" /><img src="https://cdn.simpleicons.org/anthropic" alt="Anthropic" class="logo-img" /><img src="https://cdn.simpleicons.org/n8n" alt="n8n" class="logo-img" /><img src="https://cdn.simpleicons.org/zapier" alt="Zapier" class="logo-img" /><img src="https://cdn.simpleicons.org/hubspot" alt="HubSpot" class="logo-img" /><img src="https://cdn.simpleicons.org/twilio" alt="Twilio" class="logo-img" /><img src="https://cdn.simpleicons.org/slack" alt="Slack" class="logo-img" /><img src="https://cdn.simpleicons.org/whatsapp" alt="WhatsApp" class="logo-img" /><img src="https://cdn.simpleicons.org/shopify" alt="Shopify" class="logo-img" /><img src="https://cdn.simpleicons.org/stripe" alt="Stripe" class="logo-img" /><img src="https://cdn.simpleicons.org/supabase" alt="Supabase" class="logo-img" /><img src="https://cdn.simpleicons.org/vercel" alt="Vercel" class="logo-img" />
               </div>
-              <div class="flex items-center gap-12 px-6 py-2 grayscale opacity-70" aria-hidden="true">
-                <img src="https://cdn.simpleicons.org/openai/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/anthropic/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/n8n/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/zapier/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/hubspot/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/twilio/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/slack/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/whatsapp/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/shopify/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/stripe/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/vercel/09090b" alt="" class="h-7" />
-                <img src="https://cdn.simpleicons.org/supabase/09090b" alt="" class="h-7" />
+              <div class="flex items-center gap-12 px-6" aria-hidden="true">
+                <img src="https://cdn.simpleicons.org/openai" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/anthropic" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/n8n" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/zapier" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/hubspot" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/twilio" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/slack" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/whatsapp" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/shopify" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/stripe" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/supabase" alt="" class="logo-img" /><img src="https://cdn.simpleicons.org/vercel" alt="" class="logo-img" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- SERVICES BENTO -->
       <section class="px-6 py-24">
         <div class="mx-auto max-w-6xl">
           <div class="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div class="max-w-2xl">
-              <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">What I do</p>
-              <h2 class="mt-3 font-display text-4xl font-bold text-ink md:text-5xl">Four levers I pull for your business.</h2>
+              <p class="eyebrow">What I do</p>
+              <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl"><span class="gradient-text">Four levers I pull</span><br class="hidden sm:block" /> for your business.</h2>
             </div>
-            <a href="services.html" class="inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-ink underline-offset-4 transition hover:underline">All services →</a>
+            <a href="services.html" class="btn btn-ghost !py-2.5 !text-sm">All services →</a>
           </div>
 
-          <ul class="mt-14 grid gap-6 md:grid-cols-2">
-            <li class="reveal tilt-card group rounded-2xl border border-zinc-200 bg-white p-8">
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-ink text-mist">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h2l2-6 4 12 2-6h4"/><circle cx="12" cy="12" r="9" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="bento mt-12">
+            <!-- Big featured tile -->
+            <article class="card card-hover card-grad col-4 overflow-hidden p-8">
+              <div class="aurora !h-72 !opacity-40"></div>
+              <div class="relative">
+                <div class="icon-tile">
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h2l2-6 4 12 2-6h4"/><circle cx="12" cy="12" r="9"/></svg>
+                </div>
+                <h3 class="mt-6 font-display text-3xl font-bold">AI Automation</h3>
+                <p class="mt-3 max-w-md text-muted">Custom workflows in n8n, Make, and code. Connect your stack, kill manual ops, and turn hours-per-week tasks into one-click systems with monitoring and graceful failure.</p>
+                <div class="mt-6 flex flex-wrap gap-2"><span class="chip-tool">n8n</span><span class="chip-tool">Make</span><span class="chip-tool">Python</span><span class="chip-tool">Supabase</span></div>
+                <a href="services.html#ai-automation" class="mt-6 inline-flex items-center gap-1 text-sm font-medium text-blue-400 hover:text-blue-300">Explore automation →</a>
               </div>
-              <h3 class="mt-6 font-display text-2xl font-bold text-ink">AI Automation</h3>
-              <p class="mt-3 text-ash">Custom workflows in n8n, Make, and code. Connect your stack, eliminate manual ops, turn hours-per-week tasks into one-click systems.</p>
-              <a href="services.html#ai-automation" class="mt-5 inline-flex cursor-pointer items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover">Learn more →</a>
-            </li>
-            <li class="reveal tilt-card group rounded-2xl border border-zinc-200 bg-white p-8">
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-ink text-mist">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-3.5-7.1M21 4v5h-5"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
+            </article>
+
+            <article class="card card-hover col-2 p-8">
+              <div class="icon-tile">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-3.5-7.1M21 4v5h-5"/><path stroke-linecap="round" stroke-linejoin="round" d="M8 11h.01M12 11h.01M16 11h.01"/></svg>
               </div>
-              <h3 class="mt-6 font-display text-2xl font-bold text-ink">Chatbot Development</h3>
-              <p class="mt-3 text-ash">GPT-powered assistants that handle support, qualify leads, and close revenue across web, WhatsApp, Slack, and Discord.</p>
-              <a href="services.html#chatbots" class="mt-5 inline-flex cursor-pointer items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover">Learn more →</a>
-            </li>
-            <li class="reveal tilt-card group rounded-2xl border border-zinc-200 bg-white p-8">
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-ink text-mist">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v3M12 17v3M5 12H2M22 12h-3"/><rect x="9" y="7" width="6" height="10" rx="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3 class="mt-6 font-display text-2xl font-bold">Chatbot Development</h3>
+              <p class="mt-3 text-muted">RAG assistants that handle support, qualify leads, and close revenue across web, WhatsApp, and Slack.</p>
+              <a href="services.html#chatbots" class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-blue-400 hover:text-blue-300">Learn more →</a>
+            </article>
+
+            <article class="card card-hover col-2 p-8">
+              <div class="icon-tile">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v3M12 17v3M5 12H2M22 12h-3"/><rect x="9" y="7" width="6" height="10" rx="3"/></svg>
               </div>
-              <h3 class="mt-6 font-display text-2xl font-bold text-ink">AI Voice Calling Agents</h3>
-              <p class="mt-3 text-ash">Outbound and inbound voice agents on VAPI, Bland, and Retell — booked calls, qualified leads, recovered carts, fully autonomous.</p>
-              <a href="services.html#voice" class="mt-5 inline-flex cursor-pointer items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover">Learn more →</a>
-            </li>
-            <li class="reveal tilt-card group rounded-2xl border border-zinc-200 bg-white p-8">
-              <div class="grid h-12 w-12 place-items-center rounded-xl bg-ink text-mist">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M21 7v6h-6"/></svg>
+              <h3 class="mt-6 font-display text-2xl font-bold">AI Voice Agents</h3>
+              <p class="mt-3 text-muted">Outbound &amp; inbound agents on VAPI, Bland, and Retell. Booked calls and recovered carts, fully autonomous.</p>
+              <a href="services.html#voice" class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-blue-400 hover:text-blue-300">Learn more →</a>
+            </article>
+
+            <article class="card card-hover col-4 overflow-hidden p-8">
+              <div class="relative flex h-full flex-col justify-between gap-6 md:flex-row md:items-end">
+                <div>
+                  <div class="icon-tile">
+                    <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75"><path stroke-linecap="round" stroke-linejoin="round" d="M3 17l6-6 4 4 8-8M21 7v6h-6"/></svg>
+                  </div>
+                  <h3 class="mt-6 font-display text-2xl font-bold">Marketing Automation</h3>
+                  <p class="mt-3 max-w-md text-muted">HubSpot, Customer.io, and bespoke pipelines that turn cold lists into compounding revenue — segmented, personalized, and A/B tested from day one.</p>
+                  <a href="services.html#marketing" class="mt-5 inline-flex items-center gap-1 text-sm font-medium text-blue-400 hover:text-blue-300">Learn more →</a>
+                </div>
+                <div class="flex gap-3"><span class="chip-tool">HubSpot</span><span class="chip-tool">Apollo</span></div>
               </div>
-              <h3 class="mt-6 font-display text-2xl font-bold text-ink">Marketing Automation</h3>
-              <p class="mt-3 text-ash">HubSpot, Customer.io, and bespoke pipelines that turn cold lists into compounding revenue — segmented, personalized, tested.</p>
-              <a href="services.html#marketing" class="mt-5 inline-flex cursor-pointer items-center gap-1 text-sm font-medium text-accent hover:text-accent-hover">Learn more →</a>
-            </li>
-          </ul>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section class="border-t border-zinc-200 bg-ink px-6 py-24 text-mist">
-        <div class="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_1.4fr]">
-          <div class="reveal">
-            <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">Why Kenniz</p>
-            <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl">Senior engineering, freelancer pricing.</h2>
-            <p class="mt-4 text-zinc-400">Most "AI consultants" sell strategy decks. I ship working systems and document them well enough that your team owns them after I leave.</p>
+      <!-- WHY -->
+      <section class="px-6 py-24">
+        <div class="mx-auto max-w-6xl">
+          <div class="reveal mx-auto max-w-2xl text-center">
+            <p class="eyebrow">Why Kenniz</p>
+            <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl"><span class="gradient-text">Senior engineering,</span><br />freelancer pricing.</h2>
+            <p class="mt-4 text-muted">Most "AI consultants" sell strategy decks. I ship working systems and document them well enough that your team owns them after I leave.</p>
           </div>
-          <ul class="reveal grid gap-6 sm:grid-cols-2">
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div class="num-chip text-3xl text-accent">01</div>
-              <h3 class="mt-3 font-display text-xl font-bold">Fixed scope, fixed price</h3>
-              <p class="mt-2 text-sm text-zinc-400">No surprise invoices. You see the plan and price before any code is written.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div class="num-chip text-3xl text-accent">02</div>
-              <h3 class="mt-3 font-display text-xl font-bold">Daily Loom updates</h3>
-              <p class="mt-2 text-sm text-zinc-400">Two-minute videos every working day. You always know where the build is.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div class="num-chip text-3xl text-accent">03</div>
-              <h3 class="mt-3 font-display text-xl font-bold">No lock-in</h3>
-              <p class="mt-2 text-sm text-zinc-400">Code, prompts, workflows, and docs are yours. Host anywhere, edit anything.</p>
-            </li>
-            <li class="rounded-2xl border border-white/10 bg-white/5 p-6">
-              <div class="num-chip text-3xl text-accent">04</div>
-              <h3 class="mt-3 font-display text-xl font-bold">Honest first call</h3>
-              <p class="mt-2 text-sm text-zinc-400">If a $20 Zap solves it, I'll point you at the Zap. No fake project inflation.</p>
-            </li>
-          </ul>
+          <div class="reveal mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="card card-hover p-6"><div class="num text-3xl gradient-accent">01</div><h3 class="mt-3 font-display text-lg font-bold">Fixed scope, fixed price</h3><p class="mt-2 text-sm text-muted">You see the plan and price before any code is written.</p></div>
+            <div class="card card-hover p-6"><div class="num text-3xl gradient-accent">02</div><h3 class="mt-3 font-display text-lg font-bold">Daily Loom updates</h3><p class="mt-2 text-sm text-muted">Two-minute videos every working day. Always know where the build is.</p></div>
+            <div class="card card-hover p-6"><div class="num text-3xl gradient-accent">03</div><h3 class="mt-3 font-display text-lg font-bold">No lock-in</h3><p class="mt-2 text-sm text-muted">Code, prompts, and docs are yours. Host anywhere, edit anything.</p></div>
+            <div class="card card-hover p-6"><div class="num text-3xl gradient-accent">04</div><h3 class="mt-3 font-display text-lg font-bold">Honest first call</h3><p class="mt-2 text-sm text-muted">If a $20 Zap solves it, I'll point you at the Zap.</p></div>
+          </div>
         </div>
       </section>
 
+      <!-- FEATURED WORK -->
       <section class="px-6 py-24">
         <div class="mx-auto max-w-6xl">
           <div class="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div class="max-w-2xl">
-              <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">Featured work</p>
-              <h2 class="mt-3 font-display text-4xl font-bold text-ink md:text-5xl">Systems that paid for themselves in a month.</h2>
+              <p class="eyebrow">Featured work</p>
+              <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl"><span class="gradient-text">Systems that paid for</span><br class="hidden sm:block" /> themselves in a month.</h2>
             </div>
-            <a href="work.html" class="inline-flex cursor-pointer items-center gap-2 text-sm font-medium text-ink underline-offset-4 transition hover:underline">All case studies →</a>
+            <a href="work.html" class="btn btn-ghost !py-2.5 !text-sm">All case studies →</a>
           </div>
-
-          <div class="mt-14 grid gap-6 md:grid-cols-3">
-            <article class="reveal tilt-card rounded-2xl border border-zinc-200 bg-white p-7">
-              <div class="flex items-center justify-between">
-                <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-ash">SaaS · Voice</span>
-                <span class="num-chip text-2xl text-accent">+$42K/mo</span>
-              </div>
-              <h3 class="mt-5 font-display text-xl font-bold text-ink">Voice agent recovers abandoned trials</h3>
-              <p class="mt-2 text-sm text-ash">Outbound VAPI agent calls trial users on day 11. Re-activates 18% — adds $42K MRR for a Series-A B2B SaaS.</p>
-              <p class="mt-5 text-xs text-ash">VAPI · GPT-4o · HubSpot · Twilio</p>
+          <div class="mt-12 grid gap-5 md:grid-cols-3">
+            <article class="card card-hover card-grad overflow-hidden">
+              <div class="relative h-28" style="background:radial-gradient(at 30% 30%,rgba(59,130,246,.55),transparent 60%),radial-gradient(at 75% 70%,rgba(139,92,246,.45),transparent 60%)"><span class="num absolute right-4 top-4 text-3xl text-white">+$42K/mo</span></div>
+              <div class="p-6"><div class="flex gap-2"><span class="chip">SaaS</span><span class="chip">Voice</span></div><h3 class="mt-3 font-display text-xl font-bold">Voice agent recovers abandoned trials</h3><p class="mt-2 text-sm text-muted">Day-11 VAPI agent re-activates 18% of churned trials — +$42K MRR for a Series-A SaaS.</p></div>
             </article>
-            <article class="reveal tilt-card rounded-2xl border border-zinc-200 bg-white p-7">
-              <div class="flex items-center justify-between">
-                <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-ash">E-commerce · Chatbot</span>
-                <span class="num-chip text-2xl text-accent">71%</span>
-              </div>
-              <h3 class="mt-5 font-display text-xl font-bold text-ink">Chatbot deflects 71% of L1 support</h3>
-              <p class="mt-2 text-sm text-ash">RAG bot over a 4,000-page knowledge base. Resolves order tracking, returns, and sizing without handoff.</p>
-              <p class="mt-5 text-xs text-ash">Botpress · Pinecone · Claude · Shopify</p>
+            <article class="card card-hover card-grad overflow-hidden">
+              <div class="relative h-28" style="background:radial-gradient(at 20% 50%,rgba(34,211,238,.5),transparent 60%),radial-gradient(at 80% 30%,rgba(59,130,246,.45),transparent 60%)"><span class="num absolute right-4 top-4 text-3xl text-white">71%</span></div>
+              <div class="p-6"><div class="flex gap-2"><span class="chip">E-commerce</span><span class="chip">Chatbot</span></div><h3 class="mt-3 font-display text-xl font-bold">Chatbot deflects 71% of L1 support</h3><p class="mt-2 text-sm text-muted">RAG bot over a 4,000-page KB resolves tracking, returns, and sizing without handoff.</p></div>
             </article>
-            <article class="reveal tilt-card rounded-2xl border border-zinc-200 bg-white p-7">
-              <div class="flex items-center justify-between">
-                <span class="rounded-full bg-zinc-100 px-3 py-1 text-xs font-medium text-ash">B2B · Outbound</span>
-                <span class="num-chip text-2xl text-accent">18 demos/wk</span>
-              </div>
-              <h3 class="mt-5 font-display text-xl font-bold text-ink">Cold outbound system books demos on autopilot</h3>
-              <p class="mt-2 text-sm text-ash">Apollo enrichment + AI-personalized first lines + multi-step sequence. Zero to 18 booked demos/week in 6 weeks.</p>
-              <p class="mt-5 text-xs text-ash">n8n · Apollo · GPT-4o · Instantly</p>
+            <article class="card card-hover card-grad overflow-hidden">
+              <div class="relative h-28" style="background:radial-gradient(at 50% 20%,rgba(139,92,246,.55),transparent 60%),radial-gradient(at 60% 80%,rgba(59,130,246,.45),transparent 60%)"><span class="num absolute right-4 top-4 text-3xl text-white">18/wk</span></div>
+              <div class="p-6"><div class="flex gap-2"><span class="chip">B2B</span><span class="chip">Outbound</span></div><h3 class="mt-3 font-display text-xl font-bold">Cold outbound books demos on autopilot</h3><p class="mt-2 text-sm text-muted">Apollo + GPT-4o personalization + Instantly. Zero to 18 booked demos/week in 6 weeks.</p></div>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="border-t border-zinc-200 bg-white px-6 py-24">
+      <!-- TESTIMONIAL -->
+      <section class="px-6 py-24">
         <div class="mx-auto max-w-4xl">
-          <div class="reveal relative overflow-hidden rounded-3xl border border-zinc-200 bg-mist p-8 md:p-12">
-            <div aria-hidden="true" class="pointer-events-none absolute -top-24 -right-24 h-72 w-72 glow"></div>
-            <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">Verified on Upwork</p>
-            <div class="mt-3 flex items-center gap-1 text-amber-500">
-              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-              <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
-              <span class="ml-2 num-chip text-lg text-ink">5.0</span>
-              <span class="ml-1 text-sm text-ash">· 100+ projects delivered</span>
+          <div class="reveal card card-grad relative overflow-hidden rounded-3xl p-8 md:p-12">
+            <div class="aurora !opacity-50"></div>
+            <div class="relative">
+              <p class="eyebrow">Verified on Upwork</p>
+              <div class="mt-3 flex items-center gap-1 text-amber-400">
+                <svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg><svg class="h-5 w-5 fill-current" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></svg>
+                <span class="num ml-2 text-lg">5.0</span><span class="ml-1 text-sm text-muted">· 100+ projects delivered</span>
+              </div>
+              <!-- Replace with a real Upwork review before sharing publicly. -->
+              <blockquote class="mt-6 font-display text-2xl font-medium leading-snug md:text-3xl">&ldquo;Paste a real Upwork review here — lead with the outcome, what changed for the client after Kenniz shipped.&rdquo;</blockquote>
+              <p class="mt-4 text-sm text-muted">— Client role · Project type</p>
+              <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-ghost mt-8 !py-2.5 !text-sm">Read all reviews on Upwork
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></a>
             </div>
-            <!-- Replace the quote below with a real Upwork review before sharing publicly. -->
-            <blockquote class="mt-6 font-display text-2xl font-medium leading-snug text-ink md:text-3xl">
-              &ldquo;Paste a real Upwork review here. Keep it 1–2 sentences, lead with the outcome —
-              what changed for the client after Kenniz shipped.&rdquo;
-            </blockquote>
-            <p class="mt-4 text-sm text-ash">— Client role · Project type</p>
-            <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="mt-8 inline-flex cursor-pointer items-center gap-2 rounded-lg border border-zinc-300 bg-white px-5 py-3 text-sm font-medium text-ink transition-colors duration-200 hover:border-ink">
-              Read all reviews on Upwork
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg>
-            </a>
           </div>
         </div>
       </section>
 
-      <section class="border-t border-zinc-200 bg-mist px-6 py-24">
+      <!-- CTA -->
+      <section class="px-6 py-24">
         <div class="mx-auto max-w-4xl text-center">
-          <p class="font-display text-sm font-semibold uppercase tracking-widest text-accent">Let's build</p>
-          <h2 class="mt-3 font-display text-4xl font-bold text-ink md:text-6xl">Your AI moat starts with a 30-minute call.</h2>
-          <p class="mx-auto mt-5 max-w-2xl text-lg text-ash">Free audit. Honest answer on whether AI is the right lever. If it is, you get a fixed-scope plan within 48 hours.</p>
+          <p class="eyebrow">Let's build</p>
+          <h2 class="mt-3 font-display text-4xl font-bold md:text-6xl"><span class="gradient-text">Your AI moat starts</span><br /><span class="gradient-accent">with a 30-minute call.</span></h2>
+          <p class="mx-auto mt-5 max-w-2xl text-lg text-muted">Free audit. Honest answer on whether AI is the right lever. If it is, you get a fixed-scope plan within 48 hours.</p>
           <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-ink px-6 py-3 text-base font-medium text-mist transition-colors duration-200 hover:bg-graphite">
-              Hire me on Upwork
-              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-            <a href="contact.html" class="inline-flex cursor-pointer items-center justify-center gap-2 rounded-lg border border-zinc-300 bg-white px-6 py-3 text-base font-medium text-ink transition-colors duration-200 hover:border-ink">Other ways to reach me</a>
+            <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Hire me on Upwork
+              <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg></a>
+            <a href="contact.html" class="btn btn-ghost">Other ways to reach me</a>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="border-t border-zinc-200 bg-white px-6 py-12">
+    <!-- FOOTER -->
+    <footer class="border-t border-white/5 px-6 py-12">
       <div class="mx-auto grid max-w-6xl gap-10 md:grid-cols-4">
         <div class="md:col-span-2">
-          <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight">
-            <span class="grid h-8 w-8 place-items-center rounded-lg bg-ink text-mist">K</span>
-            <span>Kenniz</span>
-          </a>
-          <p class="mt-3 max-w-sm text-sm text-ash">Freelance AI engineer building automations, chatbots, voice agents, and marketing systems for SaaS teams.</p>
+          <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold"><span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span><span>Kenniz</span></a>
+          <p class="mt-3 max-w-sm text-sm text-muted">Freelance AI engineer building automations, chatbots, voice agents, and marketing systems for SaaS teams.</p>
         </div>
-        <div>
-          <h4 class="font-display text-sm font-semibold uppercase tracking-widest text-ash">Site</h4>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li><a href="services.html" class="text-ink hover:text-accent">Services</a></li>
-            <li><a href="work.html" class="text-ink hover:text-accent">Work</a></li>
-            <li><a href="process.html" class="text-ink hover:text-accent">Process</a></li>
-            <li><a href="stack.html" class="text-ink hover:text-accent">Stack</a></li>
-            <li><a href="faq.html" class="text-ink hover:text-accent">FAQ</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-display text-sm font-semibold uppercase tracking-widest text-ash">Contact</h4>
-          <ul class="mt-4 space-y-2 text-sm">
-            <li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="text-ink hover:text-accent">Upwork profile</a></li>
-            <li><a href="mailto:kenniz2440@gmail.com" class="text-ink hover:text-accent">kenniz2440@gmail.com</a></li>
-            <li><a href="contact.html" class="text-ink hover:text-accent">Contact page</a></li>
-          </ul>
-        </div>
+        <div><h4 class="eyebrow">Site</h4><ul class="mt-4 space-y-2 text-sm"><li><a href="services.html" class="nav-link">Services</a></li><li><a href="work.html" class="nav-link">Work</a></li><li><a href="process.html" class="nav-link">Process</a></li><li><a href="stack.html" class="nav-link">Stack</a></li><li><a href="faq.html" class="nav-link">FAQ</a></li></ul></div>
+        <div><h4 class="eyebrow">Contact</h4><ul class="mt-4 space-y-2 text-sm"><li><a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" class="nav-link">Upwork profile</a></li><li><a href="mailto:kenniz2440@gmail.com" class="nav-link">kenniz2440@gmail.com</a></li><li><a href="contact.html" class="nav-link">Contact page</a></li></ul></div>
       </div>
-      <div class="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-zinc-200 pt-6 text-sm text-ash md:flex-row">
+      <div class="mx-auto mt-10 flex max-w-6xl flex-col items-center justify-between gap-4 border-t border-white/5 pt-6 text-sm text-muted-2 md:flex-row">
         <p>&copy; <span id="year"></span> Kenniz. Built with care, shipped fast.</p>
-        <a href="#main" class="hover:text-ink">Back to top ↑</a>
+        <a href="#main" class="nav-link">Back to top ↑</a>
       </div>
     </footer>
 
-    <script type="application/ld+json">
-      {"@context":"https://schema.org","@type":"Person","name":"Kenniz","jobTitle":"Freelance AI Engineer","email":"mailto:kenniz2440@gmail.com","url":"https://upwork.com/freelancers/kenniz","sameAs":["https://upwork.com/freelancers/kenniz"],"knowsAbout":["AI Automation","Chatbot Development","AI Voice Calling Agents","Marketing Automation","n8n","Make","VAPI","OpenAI","Anthropic Claude"]}
-    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Kenniz","jobTitle":"Freelance AI Engineer","email":"mailto:kenniz2440@gmail.com","url":"https://upwork.com/freelancers/kenniz","knowsAbout":["AI Automation","Chatbot Development","AI Voice Calling Agents","Marketing Automation","n8n","VAPI","OpenAI","Anthropic Claude"]}</script>
     <script src="assets/scripts.js"></script>
   </body>
 </html>
