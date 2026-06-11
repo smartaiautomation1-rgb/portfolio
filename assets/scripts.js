@@ -333,12 +333,34 @@
       (entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting) {
-            spyLinks.forEach((l) => l.classList.toggle('nav-link-active', l.dataset.spy === e.target.id));
+            spyLinks.forEach((l) => {
+              const active = l.dataset.spy === e.target.id;
+              l.classList.toggle('nav-link-active', active);
+              l.classList.toggle('is-current', active);
+            });
           }
         });
       },
-      { rootMargin: '-50% 0px -45% 0px', threshold: 0 }
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
     );
     spyTargets.forEach((t) => spyIo.observe(t));
+  }
+
+  // -------- scroll-linked accent hue rotation on long pages --------
+  if (!reduceMotion) {
+    const accents = document.querySelectorAll('.gradient-accent');
+    if (accents.length) {
+      let last = 0;
+      const tick = () => {
+        const h = document.documentElement;
+        const pct = (h.scrollTop / Math.max(1, h.scrollHeight - h.clientHeight)) * 100;
+        if (Math.abs(pct - last) > 0.3) {
+          accents.forEach((el) => el.style.setProperty('background-position', `${pct}% 0`));
+          last = pct;
+        }
+      };
+      document.addEventListener('scroll', tick, { passive: true });
+      tick();
+    }
   }
 })();

@@ -1,6 +1,6 @@
 /* ============================================================
    Kenniz — dark premium design system v2
-   Fonts: Bricolage Grotesque (display) + Inter (body) + JetBrains Mono.
+   Fonts: Geist (display + body) + Instrument Serif (italic accents) + Geist Mono.
    Heavy motion layer.
    ============================================================ */
 
@@ -24,25 +24,26 @@
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
-  font-feature-settings: 'cv11', 'ss01', 'ss03';
+  font-family: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
+  font-feature-settings: 'ss01', 'ss02', 'ss06', 'cv11';
   background-color: var(--base);
   color: var(--fg);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   overflow-x: hidden;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.008em;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
-  font-variation-settings: 'wdth' 100, 'opsz' 18;
-  letter-spacing: -0.035em;
-  line-height: 1.05;
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  line-height: 1.02;
 }
-.font-display { font-family: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif; }
-.font-mono { font-family: 'JetBrains Mono', ui-monospace, monospace; font-feature-settings: 'ss01', 'ss02', 'zero'; }
+.font-display { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 600; letter-spacing: -0.04em; }
+.font-serif  { font-family: 'Instrument Serif', 'Times New Roman', serif; font-style: italic; letter-spacing: -0.01em; font-weight: 400; }
+.font-mono   { font-family: 'Geist Mono', ui-monospace, monospace; font-feature-settings: 'ss02', 'ss03', 'zero'; }
 
 /* ---------- Scroll progress bar ---------- */
 .progress-bar {
@@ -135,10 +136,10 @@ h1, h2, h3, h4 {
 
 /* ---------- Typography helpers ---------- */
 .eyebrow {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
-  font-size: 0.75rem;
+  font-family: 'Geist Mono', ui-monospace, monospace;
+  font-size: 0.72rem;
   font-weight: 500;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--accent-3);
   display: inline-flex;
@@ -170,10 +171,11 @@ h1, h2, h3, h4 {
 .text-muted { color: var(--muted); }
 .text-muted-2 { color: var(--muted-2); }
 .num {
-  font-family: 'Bricolage Grotesque', 'Inter', sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.04em;
+  font-family: 'Geist', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.055em;
   font-variant-numeric: tabular-nums;
+  font-feature-settings: 'ss02', 'zero';
 }
 
 /* Typing cursor */
@@ -242,7 +244,7 @@ h1, h2, h3, h4 {
   padding: 0.3rem 0.75rem;
   font-size: 0.72rem;
   color: var(--muted);
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Geist Mono', ui-monospace, monospace;
 }
 .chip-tool {
   border-radius: 999px;
@@ -256,7 +258,7 @@ h1, h2, h3, h4 {
   gap: 0.4rem;
   cursor: pointer;
   transition: all 0.2s ease;
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Geist Mono', ui-monospace, monospace;
 }
 .chip-tool:hover { background: rgba(255, 255, 255, 0.08); border-color: var(--line-strong); }
 .status-dot {
@@ -375,7 +377,7 @@ h1, h2, h3, h4 {
 .brand-mark { height: 1.7rem; width: auto; display: inline-flex; align-items: center; transition: transform 0.2s ease; }
 .brand-mark:hover { transform: scale(1.08); }
 .brand-text {
-  font-family: 'Bricolage Grotesque', sans-serif;
+  font-family: 'Geist', sans-serif;
   font-weight: 700;
   font-size: 1.15rem;
   letter-spacing: -0.03em;
@@ -409,7 +411,7 @@ h1, h2, h3, h4 {
 .stack-tile p { position: relative; z-index: 1; }
 
 /* ---------- Code card ---------- */
-.code-card pre { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+.code-card pre { font-family: 'Geist Mono', ui-monospace, monospace; }
 .tok-key { color: #c4b5fd; }
 .tok-str { color: #6ee7b7; }
 .tok-com { color: #64748b; }
@@ -478,7 +480,7 @@ h1, h2, h3, h4 {
 
 /* ---------- ROI calculator ---------- */
 .roi-input {
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Geist Mono', ui-monospace, monospace;
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--line);
   color: var(--fg);
@@ -512,6 +514,122 @@ h1, h2, h3, h4 {
 /* Details */
 details summary::-webkit-details-marker { display: none; }
 details[open] summary svg.chev { transform: rotate(45deg); }
+
+/* ---------- Editorial italic accent (used inside headlines) ---------- */
+.serif-accent {
+  font-family: 'Instrument Serif', 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #e2e8f0;
+  padding-right: 0.06em;
+}
+
+/* ---------- Work card: uniform, calm, no gradient block ---------- */
+.work-card {
+  position: relative;
+  border-radius: 1.1rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.038), rgba(255, 255, 255, 0.012));
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: transform 0.35s cubic-bezier(.21,1.02,.73,1), border-color 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
+}
+.work-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--line-strong);
+  box-shadow: 0 30px 60px -28px rgba(0, 0, 0, 0.75);
+}
+.work-head {
+  position: relative;
+  padding: 1.25rem 1.5rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0)),
+    var(--surface);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.work-head::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
+}
+.work-metric {
+  font-family: 'Geist', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  font-size: 1.65rem;
+  line-height: 1;
+  color: #f1f5f9;
+}
+.work-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.22rem 0.6rem;
+  font-size: 0.66rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: 'Geist Mono', monospace;
+}
+.work-body { padding: 1.25rem 1.5rem 1.5rem; }
+.work-arrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  font-size: 0.84rem;
+  color: var(--muted);
+  transition: gap 0.25s ease, color 0.25s ease;
+}
+.work-card:hover .work-arrow { color: #fff; gap: 0.7rem; }
+
+/* ---------- Section index ticker (top-right, follows scroll) ---------- */
+.section-index {
+  position: fixed;
+  right: max(1.25rem, env(safe-area-inset-right));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 30;
+  display: none;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted-2);
+  pointer-events: auto;
+}
+@media (min-width: 1280px) { .section-index { display: flex; } }
+.section-index a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted-2);
+  transition: color 0.25s ease;
+}
+.section-index a::before {
+  content: '';
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background: var(--line-strong);
+  transition: width 0.3s cubic-bezier(.21,1.02,.73,1), background 0.3s ease;
+}
+.section-index a:hover { color: var(--fg); }
+.section-index a.is-current { color: var(--fg); }
+.section-index a.is-current::before { width: 28px; background: linear-gradient(90deg, #60a5fa, #a78bfa); }
 
 /* ---------- Photographic background bands (always high-contrast via scrim) ---------- */
 .photo { position: relative; overflow: hidden; isolation: isolate; }
@@ -593,7 +711,7 @@ details[open] summary svg.chev { transform: rotate(45deg); }
   font-size: 0.6rem;
   letter-spacing: 0.02em;
   color: var(--muted-2);
-  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-family: 'Geist Mono', ui-monospace, monospace;
   transition: color 0.2s ease;
   white-space: nowrap;
 }

@@ -11,13 +11,13 @@
     <meta property="og:description" content="Freelance AI engineer. Automations, chatbots, voice agents, and marketing systems that ship in days." />
     <meta property="og:url" content="https://upwork.com/freelancers/kenniz" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Bricolage Grotesque,sans-serif' font-size='18' font-weight='800' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E" />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Geist,sans-serif' font-size='18' font-weight='800' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{fontFamily:{display:['"Bricolage Grotesque"','Inter','sans-serif'],body:['Inter','sans-serif'],mono:['"JetBrains Mono"','monospace']},colors:{accent:'#3b82f6'}}}};</script>
+    <script>tailwind.config={theme:{extend:{fontFamily:{display:['Geist','Inter','sans-serif'],body:['Geist','Inter','sans-serif'],serif:['"Instrument Serif"','serif'],mono:['"Geist Mono"','monospace']},colors:{accent:'#3b82f6'}}}};</script>
   </head>
 
   <body class="min-h-screen">
@@ -65,16 +65,26 @@
       </div>
     </header>
 
+    <!-- floating section index (desktop only) -->
+    <nav class="section-index" aria-label="Section index">
+      <a href="#sec-hero"     data-spy="sec-hero">Intro</a>
+      <a href="#sec-services" data-spy="sec-services">Services</a>
+      <a href="#sec-stack"    data-spy="sec-stack">Stack</a>
+      <a href="#sec-process"  data-spy="sec-process">Process</a>
+      <a href="#sec-work"     data-spy="sec-work">Work</a>
+      <a href="#sec-cta"      data-spy="sec-cta">Contact</a>
+    </nav>
+
     <main id="main">
       <!-- HERO -->
-      <section class="spotlight-host relative px-6 pb-24 pt-36 md:pt-48">
+      <section id="sec-hero" class="spotlight-host relative px-6 pb-24 pt-36 md:pt-48">
         <div class="aurora"></div>
         <div class="spotlight"></div>
         <div class="relative mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1.15fr_1fr]">
           <div>
             <div class="reveal chip"><span class="status-dot"></span> Available for new projects · Top Rated on Upwork</div>
-            <h1 class="reveal mt-6 font-display text-5xl font-extrabold md:text-7xl">
-              <span class="gradient-text">AI systems for</span><br />
+            <h1 class="reveal mt-6 font-display text-5xl font-semibold md:text-7xl">
+              <span class="gradient-text">AI <span class="serif-accent">systems</span> for</span><br />
               <span class="gradient-accent typing" data-typing='["chatbots.","voice agents.","automations.","marketing.","your team."]'>chatbots.</span>
             </h1>
             <p class="reveal mt-6 max-w-xl text-lg leading-relaxed text-muted md:text-xl">
@@ -191,7 +201,7 @@
       </section>
 
       <!-- SERVICES BENTO -->
-      <section class="px-6 py-24">
+      <section id="sec-services" class="px-6 py-24">
         <div class="mx-auto max-w-6xl">
           <div class="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div class="max-w-2xl">
@@ -264,7 +274,7 @@
       </section>
 
       <!-- INTEGRATIONS GRID (tight floating logo cloud) -->
-      <section class="px-6 py-24">
+      <section id="sec-stack" class="px-6 py-24">
         <div class="mx-auto max-w-6xl">
           <div class="reveal mx-auto max-w-2xl text-center">
             <p class="eyebrow">Native integrations</p>
@@ -335,7 +345,7 @@
         <div class="mx-auto max-w-6xl">
           <div class="reveal mx-auto max-w-2xl text-center">
             <p class="eyebrow">Why Kenniz</p>
-            <h2 class="mt-3 font-display text-4xl font-bold md:text-5xl"><span class="gradient-text">Senior engineering,</span><br />freelancer pricing.</h2>
+            <h2 class="mt-3 font-display text-4xl font-semibold md:text-5xl"><span class="gradient-text">Senior <span class="serif-accent">engineering</span>,</span><br />freelancer pricing.</h2>
             <p class="mt-4 text-muted">Most "AI consultants" sell strategy decks. I ship working systems and document them well enough that your team owns them after I leave.</p>
           </div>
           <div class="stagger mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -348,7 +358,7 @@
       </section>
 
       <!-- HOW IT WORKS — scroll-driven sticky reveal on photo bg -->
-      <section class="photo photo-grain relative px-6 py-28">
+      <section id="sec-process" class="photo photo-grain relative px-6 py-28">
         <div class="photo-bg" data-parallax="0.18" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1600&q=70')"></div>
         <div class="relative mx-auto max-w-6xl">
           <div class="reveal mx-auto max-w-2xl text-center">
@@ -437,7 +447,7 @@
       </section>
 
       <!-- FEATURED WORK with clickable cards -->
-      <section class="px-6 py-24">
+      <section id="sec-work" class="px-6 py-24">
         <div class="mx-auto max-w-6xl">
           <div class="reveal flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div class="max-w-2xl">
@@ -447,9 +457,12 @@
             <a href="work.html" class="btn btn-ghost !py-2.5 !text-sm">All case studies →</a>
           </div>
           <div class="stagger mt-12 grid gap-5 md:grid-cols-3">
-            <article data-tilt data-case class="card card-hover card-grad overflow-hidden cursor-pointer">
-              <div class="relative h-28" style="background:radial-gradient(at 30% 30%,rgba(59,130,246,.6),transparent 60%),radial-gradient(at 75% 70%,rgba(139,92,246,.5),transparent 60%)"><span class="num absolute right-4 top-4 text-3xl text-white">+$42K/mo</span></div>
-              <div class="p-6"><div class="flex gap-2"><span class="chip">SaaS</span><span class="chip">Voice</span></div><h3 class="mt-3 font-display text-xl font-bold">Voice agent recovers abandoned trials</h3><p class="mt-2 text-sm text-muted">Day-11 VAPI agent re-activates 18% of churned trials — +$42K MRR for a Series-A SaaS.</p></div>
+            <article data-case class="work-card">
+              <header class="work-head">
+                <div class="flex items-center gap-2"><span class="work-tag">SaaS</span><span class="work-tag">Voice</span></div>
+                <span class="work-metric">+$42K<span class="text-muted-2 text-sm font-mono">/mo</span></span>
+              </header>
+              <div class="work-body"><h3 class="font-display text-xl font-semibold">Voice agent recovers abandoned trials</h3><p class="mt-2 text-sm text-muted">Day-11 VAPI agent re-activates 18% of churned trials — +$42K MRR for a Series-A SaaS.</p><span class="work-arrow">Read case study <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
               <template data-case-detail>
                 <p class="eyebrow">Case study · SaaS · Voice</p>
                 <h3 class="mt-3 font-display text-3xl font-bold">Voice agent recovers abandoned trials</h3>
@@ -463,9 +476,12 @@
                 <button data-close class="btn btn-ghost mt-8 !py-2 !px-4 !text-sm">Close</button>
               </template>
             </article>
-            <article data-tilt data-case class="card card-hover card-grad overflow-hidden cursor-pointer">
-              <div class="relative h-28" style="background:radial-gradient(at 20% 50%,rgba(34,211,238,.55),transparent 60%),radial-gradient(at 80% 30%,rgba(59,130,246,.5),transparent 60%)"><span class="num absolute right-4 top-4 text-3xl text-white">71%</span></div>
-              <div class="p-6"><div class="flex gap-2"><span class="chip">E-commerce</span><span class="chip">Chatbot</span></div><h3 class="mt-3 font-display text-xl font-bold">Chatbot deflects 71% of L1 support</h3><p class="mt-2 text-sm text-muted">RAG bot over a 4,000-page KB resolves tracking, returns, and sizing without handoff.</p></div>
+            <article data-case class="work-card">
+              <header class="work-head">
+                <div class="flex items-center gap-2"><span class="work-tag">E-comm</span><span class="work-tag">Chatbot</span></div>
+                <span class="work-metric">71<span class="text-muted-2 text-sm font-mono">%</span></span>
+              </header>
+              <div class="work-body"><h3 class="font-display text-xl font-semibold">Chatbot deflects 71% of L1 support</h3><p class="mt-2 text-sm text-muted">RAG bot over a 4,000-page KB resolves tracking, returns, and sizing without handoff.</p><span class="work-arrow">Read case study <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
               <template data-case-detail>
                 <p class="eyebrow">Case study · E-commerce · Chatbot</p>
                 <h3 class="mt-3 font-display text-3xl font-bold">Chatbot deflects 71% of L1 support</h3>
@@ -479,9 +495,12 @@
                 <button data-close class="btn btn-ghost mt-8 !py-2 !px-4 !text-sm">Close</button>
               </template>
             </article>
-            <article data-tilt data-case class="card card-hover card-grad overflow-hidden cursor-pointer">
-              <div class="relative h-28" style="background:radial-gradient(at 50% 20%,rgba(139,92,246,.6),transparent 60%),radial-gradient(at 60% 80%,rgba(59,130,246,.5),transparent 60%)"><span class="num absolute right-4 top-4 text-3xl text-white">18/wk</span></div>
-              <div class="p-6"><div class="flex gap-2"><span class="chip">B2B</span><span class="chip">Outbound</span></div><h3 class="mt-3 font-display text-xl font-bold">Cold outbound books demos on autopilot</h3><p class="mt-2 text-sm text-muted">Apollo + GPT-4o personalization + Instantly. Zero to 18 booked demos/week in 6 weeks.</p></div>
+            <article data-case class="work-card">
+              <header class="work-head">
+                <div class="flex items-center gap-2"><span class="work-tag">B2B</span><span class="work-tag">Outbound</span></div>
+                <span class="work-metric">18<span class="text-muted-2 text-sm font-mono">/wk</span></span>
+              </header>
+              <div class="work-body"><h3 class="font-display text-xl font-semibold">Cold outbound books demos on autopilot</h3><p class="mt-2 text-sm text-muted">Apollo + GPT-4o personalization + Instantly. Zero to 18 booked demos/week in 6 weeks.</p><span class="work-arrow">Read case study <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 5l7 7-7 7"/></svg></span></div>
               <template data-case-detail>
                 <p class="eyebrow">Case study · B2B · Outbound</p>
                 <h3 class="mt-3 font-display text-3xl font-bold">Cold outbound books 18 demos/wk</h3>
@@ -523,7 +542,7 @@
       </section>
 
       <!-- CTA -->
-      <section class="px-6 py-24">
+      <section id="sec-cta" class="px-6 py-24">
         <div class="mx-auto max-w-4xl text-center">
           <p class="eyebrow">Let's build</p>
           <h2 class="mt-3 font-display text-4xl font-bold md:text-6xl"><span class="gradient-text">Your AI moat starts</span><br /><span class="gradient-accent">with a 30-minute call.</span></h2>
