@@ -513,10 +513,156 @@ h1, h2, h3, h4 {
 details summary::-webkit-details-marker { display: none; }
 details[open] summary svg.chev { transform: rotate(45deg); }
 
+/* ---------- Photographic background bands (always high-contrast via scrim) ---------- */
+.photo { position: relative; overflow: hidden; isolation: isolate; }
+.photo-bg {
+  position: absolute;
+  inset: -14% 0 -14% 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center;
+  will-change: transform;
+  transform: translateZ(0);
+}
+/* Dark scrim guarantees text never blends into the image (4.5:1+ for white text) */
+.photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(5, 5, 9, 0.9) 0%, rgba(5, 5, 9, 0.66) 38%, rgba(5, 5, 9, 0.86) 100%),
+    radial-gradient(120% 80% at 50% 0%, rgba(59, 130, 246, 0.16), transparent 60%);
+}
+.photo--side::before {
+  background:
+    linear-gradient(90deg, rgba(5, 5, 9, 0.95) 0%, rgba(5, 5, 9, 0.82) 42%, rgba(5, 5, 9, 0.42) 100%),
+    linear-gradient(180deg, rgba(5, 5, 9, 0.5), rgba(5, 5, 9, 0.5));
+}
+.photo-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent 80%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 50%, black, transparent 80%);
+  pointer-events: none;
+}
+.on-photo-muted { color: #cbd5e1; }   /* readable muted on dark photo (≈ 9:1) */
+
+/* ---------- Tight integrations grid (logo cloud) ---------- */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+@media (min-width: 480px) { .logo-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0.6rem; } }
+@media (min-width: 768px) { .logo-grid { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.65rem; } }
+@media (min-width: 1024px) { .logo-grid { grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 0.7rem; } }
+.logo-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.9rem;
+  border: 1px solid var(--line);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.012));
+  transition: transform 0.28s cubic-bezier(.21,1.02,.73,1), border-color 0.28s ease, box-shadow 0.28s ease, background 0.28s ease;
+  position: relative;
+  overflow: hidden;
+}
+.logo-cell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120px circle at 50% 18%, var(--glow, rgba(96,165,250,0.4)), transparent 65%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.logo-cell:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: 0 20px 44px -24px rgba(0, 0, 0, 0.85); }
+.logo-cell:hover::before { opacity: 1; }
+.logo-cell svg { height: 1.85rem; width: auto; position: relative; z-index: 1; transition: transform 0.28s ease; }
+.logo-cell:hover svg { transform: scale(1.1); }
+.logo-cell span {
+  position: relative;
+  z-index: 1;
+  font-size: 0.6rem;
+  letter-spacing: 0.02em;
+  color: var(--muted-2);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+.logo-cell:hover span { color: var(--fg); }
+
+/* ---------- Sticky scroll reveal (dim → bright as it crosses focal point) ---------- */
+.steps-media { position: relative; }
+@media (min-width: 1024px) { .steps-sticky { position: sticky; top: 7rem; } }
+.scroll-step {
+  opacity: 0.3;
+  transform: translateY(6px);
+  transition: opacity 0.55s ease, transform 0.55s cubic-bezier(.21,1.02,.73,1);
+}
+.scroll-step.is-active { opacity: 1; transform: none; }
+.scroll-step .step-rail {
+  width: 2px;
+  background: var(--line);
+  position: relative;
+  border-radius: 2px;
+}
+.scroll-step.is-active .step-rail { background: linear-gradient(180deg, #60a5fa, #a78bfa); box-shadow: 0 0 16px rgba(96, 165, 250, 0.6); }
+.scroll-step .step-dot {
+  width: 0.85rem;
+  height: 0.85rem;
+  border-radius: 999px;
+  border: 2px solid var(--line-strong);
+  background: var(--surface);
+  transition: all 0.4s ease;
+}
+.scroll-step.is-active .step-dot { border-color: #60a5fa; background: #60a5fa; box-shadow: 0 0 0 6px rgba(96, 130, 246, 0.18); }
+
+/* ---------- Testimonial marquee ---------- */
+.tmarquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+}
+.tmarquee-track { display: flex; gap: 1rem; width: max-content; animation: marquee 50s linear infinite; }
+.tmarquee--rev .tmarquee-track { animation-duration: 62s; animation-direction: reverse; }
+.tmarquee:hover .tmarquee-track { animation-play-state: paused; }
+.tcard { width: 21rem; flex: 0 0 auto; }
+@media (max-width: 480px) { .tcard { width: 17rem; } }
+
+/* ---------- Number ticker block on photo ---------- */
+.stat-pop { transition: transform 0.5s cubic-bezier(.21,1.02,.73,1); }
+.photo:hover .stat-pop { transform: translateY(-2px); }
+
+/* ---------- Platform pill (Upwork / Fiverr) ---------- */
+.platform-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 0.85rem 0.4rem 0.45rem;
+  font-size: 0.8rem;
+  color: var(--fg);
+  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease;
+}
+.platform-pill:hover { transform: translateY(-2px); border-color: rgba(255, 255, 255, 0.32); background: rgba(255, 255, 255, 0.09); }
+.platform-pill svg { height: 1.4rem; width: 1.4rem; }
+
 /* ---------- Reduced motion ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
   .reveal, .reveal-left, .reveal-right, .reveal-scale { opacity: 1; transform: none; }
-  .aurora, .marquee-track, .status-dot, .gradient-accent, .particle { animation: none; }
+  .scroll-step { opacity: 1; transform: none; }
+  .photo-bg { transform: none !important; }
+  .aurora, .marquee-track, .tmarquee-track, .status-dot, .gradient-accent, .particle { animation: none; }
 }

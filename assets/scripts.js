@@ -289,4 +289,56 @@
       }
     });
   });
+
+  // -------- scroll parallax (transform-only, GPU-accelerated) --------
+  const parallaxEls = document.querySelectorAll('[data-parallax]');
+  if (parallaxEls.length && !reduceMotion) {
+    let ticking = false;
+    const update = () => {
+      const vh = window.innerHeight || document.documentElement.clientHeight;
+      parallaxEls.forEach((el) => {
+        const host = el.parentElement;
+        if (!host) return;
+        const rect = host.getBoundingClientRect();
+        if (rect.bottom < -200 || rect.top > vh + 200) return; // skip off-screen
+        const speed = parseFloat(el.dataset.parallax) || 0.16;
+        const fromCenter = rect.top + rect.height / 2 - vh / 2;
+        el.style.transform = `translate3d(0, ${(-fromCenter * speed).toFixed(1)}px, 0)`;
+      });
+      ticking = false;
+    };
+    const onScroll = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    document.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    update();
+  }
+
+  // -------- sticky scroll-reveal steps (dim → bright across focal band) --------
+  const steps = document.querySelectorAll('.scroll-step');
+  if (steps.length && !reduceMotion && 'IntersectionObserver' in window) {
+    const sio = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.target.classList.toggle('is-active', e.isIntersecting)),
+      { rootMargin: '-45% 0px -45% 0px', threshold: 0 }
+    );
+    steps.forEach((s) => sio.observe(s));
+  } else {
+    steps.forEach((s) => s.classList.add('is-active'));
+  }
+
+  // -------- active section highlight in nav (scroll-spy) --------
+  const spyLinks = document.querySelectorAll('[data-spy]');
+  const spyTargets = [...spyLinks].map((l) => document.getElementById(l.dataset.spy)).filter(Boolean);
+  if (spyTargets.length && 'IntersectionObserver' in window) {
+    const spyIo = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            spyLinks.forEach((l) => l.classList.toggle('nav-link-active', l.dataset.spy === e.target.id));
+          }
+        });
+      },
+      { rootMargin: '-50% 0px -45% 0px', threshold: 0 }
+    );
+    spyTargets.forEach((t) => spyIo.observe(t));
+  }
 })();
