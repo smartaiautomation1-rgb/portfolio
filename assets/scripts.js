@@ -1,6 +1,33 @@
 // Kenniz — shared scripts. All behaviors guarded against missing nodes.
 (() => {
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isFinePointer = window.matchMedia('(pointer: fine)').matches;
+  const isSmallScreen = window.matchMedia('(max-width: 767px)').matches;
+
+  // -------- theme toggle --------
+  const themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn) {
+    themeBtn.addEventListener('click', () => {
+      const next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+    });
+  }
+
+  // -------- scroll-driven header (shrink + intensify after 30px) --------
+  const siteHeader = document.getElementById('site-header');
+  if (siteHeader) {
+    let lastScrolled = false;
+    const updateHeader = () => {
+      const scrolled = window.scrollY > 30;
+      if (scrolled !== lastScrolled) {
+        siteHeader.classList.toggle('is-scrolled', scrolled);
+        lastScrolled = scrolled;
+      }
+    };
+    document.addEventListener('scroll', updateHeader, { passive: true });
+    updateHeader();
+  }
 
   // -------- year stamp --------
   const yearEl = document.getElementById('year');
@@ -290,9 +317,9 @@
     });
   });
 
-  // -------- scroll parallax (transform-only, GPU-accelerated) --------
+  // -------- scroll parallax (desktop / fine-pointer only — no mobile lag) --------
   const parallaxEls = document.querySelectorAll('[data-parallax]');
-  if (parallaxEls.length && !reduceMotion) {
+  if (parallaxEls.length && !reduceMotion && isFinePointer && !isSmallScreen) {
     let ticking = false;
     const update = () => {
       const vh = window.innerHeight || document.documentElement.clientHeight;
@@ -325,9 +352,10 @@
     steps.forEach((s) => s.classList.add('is-active'));
   }
 
-  // -------- active section highlight in nav (scroll-spy) --------
+  // -------- active section highlight in nav + now-viewing pill (scroll-spy) --------
   const spyLinks = document.querySelectorAll('[data-spy]');
   const spyTargets = [...spyLinks].map((l) => document.getElementById(l.dataset.spy)).filter(Boolean);
+  const nowSection = document.getElementById('nav-now-section');
   if (spyTargets.length && 'IntersectionObserver' in window) {
     const spyIo = new IntersectionObserver(
       (entries) => {
@@ -337,6 +365,7 @@
               const active = l.dataset.spy === e.target.id;
               l.classList.toggle('nav-link-active', active);
               l.classList.toggle('is-current', active);
+              if (active && nowSection) nowSection.textContent = l.textContent.trim();
             });
           }
         });

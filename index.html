@@ -14,10 +14,14 @@
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%233b82f6'/%3E%3Ctext x='50%25' y='55%25' dominant-baseline='middle' text-anchor='middle' font-family='Geist,sans-serif' font-size='18' font-weight='800' fill='%23fff'%3EK%3C/text%3E%3C/svg%3E" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="assets/styles.css" />
+    <script>
+      // Theme init — runs before paint to avoid flash of wrong theme
+      (function(){try{var t=localStorage.getItem('theme');if(!t){t=matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>tailwind.config={theme:{extend:{fontFamily:{display:['Geist','Inter','sans-serif'],body:['Geist','Inter','sans-serif'],serif:['"Instrument Serif"','serif'],mono:['"Geist Mono"','monospace']},colors:{accent:'#3b82f6'}}}};</script>
+    <script>tailwind.config={darkMode:'class',theme:{extend:{fontFamily:{display:['Geist','Inter','sans-serif'],body:['"Plus Jakarta Sans"','"Inter Tight"','sans-serif'],serif:['"Instrument Serif"','serif'],mono:['"Geist Mono"','monospace']},colors:{accent:'#3b82f6'}}}};</script>
   </head>
 
   <body class="min-h-screen">
@@ -28,13 +32,16 @@
 
     <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-white">Skip to content</a>
 
-    <!-- NAV -->
-    <header class="fixed inset-x-3 top-3 z-40 mx-auto max-w-6xl sm:inset-x-4 sm:top-4">
+    <!-- NAV (scroll-driven shrink + now-viewing pill) -->
+    <header id="site-header" class="fixed inset-x-3 top-3 z-40 mx-auto max-w-6xl sm:inset-x-4 sm:top-4">
       <nav class="glass flex items-center justify-between rounded-2xl px-4 py-3 sm:px-5" aria-label="Primary">
-        <a href="index.html" class="flex items-center gap-2 font-display text-lg font-bold">
-          <span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span>
-          <span>Kenniz</span>
-        </a>
+        <div class="flex items-center gap-3">
+          <a href="index.html" class="flex items-center gap-2 font-display text-lg font-semibold">
+            <span class="grid h-8 w-8 place-items-center rounded-lg text-white" style="background:linear-gradient(180deg,#3b82f6,#2563eb)">K</span>
+            <span class="nav-brand-text">Kenniz</span>
+          </a>
+          <span class="nav-now" id="nav-now"><span class="nav-now-dot"></span><span class="text-muted-2">Now viewing</span><span class="nav-now-section" id="nav-now-section">Intro</span></span>
+        </div>
         <ul class="hidden items-center gap-7 text-sm lg:flex">
           <li><a href="services.html" class="nav-link">Services</a></li>
           <li><a href="work.html" class="nav-link">Work</a></li>
@@ -43,10 +50,14 @@
           <li><a href="faq.html" class="nav-link">FAQ</a></li>
           <li><a href="contact.html" class="nav-link">Contact</a></li>
         </ul>
-        <div class="flex items-center gap-3">
+        <div class="flex items-center gap-2">
+          <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Toggle color theme">
+            <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <svg class="icon-sun"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path stroke-linecap="round" stroke-linejoin="round" d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </button>
           <a href="https://upwork.com/freelancers/kenniz" target="_blank" rel="noopener noreferrer" data-magnet class="btn btn-primary hidden !px-4 !py-2 !text-sm sm:inline-flex">Hire on Upwork
             <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M14 3h7v7M10 14L21 3M21 14v7H3V3h7"/></svg></a>
-          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border lg:hidden hairline text-white" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+          <button id="menu-toggle" type="button" class="grid h-9 w-9 cursor-pointer place-items-center rounded-lg border lg:hidden hairline" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
             <svg id="icon-open" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
             <svg id="icon-close" class="hidden h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 6l12 12M18 6L6 18"/></svg>
           </button>
