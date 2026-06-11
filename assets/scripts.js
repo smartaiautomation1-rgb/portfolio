@@ -259,17 +259,24 @@
   const modalContent = document.getElementById('case-modal-content');
   if (modalOverlay && modalContent) {
     const close = () => modalOverlay.classList.remove('is-open');
+    const open = (card) => {
+      const tpl = card.querySelector('template[data-case-detail]');
+      modalContent.innerHTML = tpl ? tpl.innerHTML : card.innerHTML;
+      modalOverlay.classList.add('is-open');
+      modalContent.querySelector('[data-close]')?.addEventListener('click', close, { once: true });
+    };
     document.querySelectorAll('[data-case]').forEach((card) => {
       card.addEventListener('click', (e) => {
         if (e.target.closest('a')) return;
-        const tpl = card.querySelector('template[data-case-detail]');
-        modalContent.innerHTML = tpl ? tpl.innerHTML : card.innerHTML;
-        modalOverlay.classList.add('is-open');
+        open(card);
+      });
+      card.querySelector('[data-case-trigger]')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        open(card);
       });
     });
     modalOverlay.addEventListener('click', (e) => { if (e.target === modalOverlay) close(); });
     document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
-    modalOverlay.querySelector('[data-close]')?.addEventListener('click', close);
   }
 
   // -------- ROI calculator --------

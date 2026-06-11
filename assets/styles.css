@@ -631,7 +631,7 @@ details[open] summary svg.chev { transform: rotate(45deg); }
   padding-right: 0.06em;
 }
 
-/* ---------- Work card: fully flat, fully consistent ---------- */
+/* ---------- Work card: consistent blue rhythm across every card ---------- */
 .work-card {
   position: relative;
   border-radius: 1.1rem;
@@ -639,21 +639,30 @@ details[open] summary svg.chev { transform: rotate(45deg); }
   border: 1px solid var(--line);
   overflow: hidden;
   transition: transform 0.35s cubic-bezier(.21,1.02,.73,1), border-color 0.35s ease, box-shadow 0.35s ease, background 0.3s ease;
-  cursor: pointer;
 }
 .work-card:hover {
   transform: translateY(-6px);
-  border-color: var(--line-strong);
-  box-shadow: var(--shadow-lg);
+  border-color: rgba(96, 165, 250, 0.45);
+  box-shadow: 0 22px 60px -22px rgba(37, 99, 235, 0.35), var(--shadow-lg);
 }
 .work-head {
-  padding: 1.1rem 1.4rem;
-  background: var(--surface-2);
+  position: relative;
+  padding: 1.25rem 1.4rem;
+  background:
+    linear-gradient(135deg, rgba(59, 130, 246, 0.16) 0%, rgba(37, 99, 235, 0.06) 55%, rgba(96, 165, 250, 0.10) 100%),
+    var(--surface-2);
   border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+}
+.work-head::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(160px 80px at 80% -20%, rgba(96, 165, 250, 0.35), transparent 70%);
+  pointer-events: none;
 }
 .work-metric {
   font-family: 'Geist', sans-serif;
@@ -679,17 +688,153 @@ details[open] summary svg.chev { transform: rotate(45deg); }
   color: var(--muted);
   font-family: 'Geist Mono', monospace;
 }
-.work-body { padding: 1.4rem; }
-.work-arrow {
+.work-body {
+  padding: 1.4rem 1.4rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.work-body h3 { line-height: 1.2; }
+.work-body p  { line-height: 1.5; color: var(--muted); font-size: 0.88rem; }
+
+/* Hover-revealed View case study button */
+.work-cta {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  color: #fff;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.28s ease, transform 0.32s cubic-bezier(.21,1.02,.73,1), box-shadow 0.28s ease;
+  box-shadow: 0 12px 28px -10px rgba(37, 99, 235, 0.55);
+}
+.work-card:hover .work-cta, .work-card:focus-within .work-cta { opacity: 1; transform: translateY(0); }
+.work-cta svg { height: 0.9rem; width: 0.9rem; }
+@media (hover: none) and (pointer: coarse) {
+  .work-cta { opacity: 1; transform: none; position: static; margin: 0.5rem 0 0; align-self: flex-start; }
+}
+
+/* ---------- Review marquee (small, enticing reviews from Upwork/Fiverr) ---------- */
+.rev-track-wrap {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+.rev-track { display: flex; gap: 0.85rem; width: max-content; animation: marquee 56s linear infinite; }
+.rev-track-wrap:hover .rev-track { animation-play-state: paused; }
+.rev-card {
+  flex: 0 0 auto;
+  width: 19rem;
+  padding: 1rem 1.1rem;
+  border-radius: 0.95rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+.rev-card-head { display: flex; align-items: center; justify-content: space-between; }
+.rev-stars { display: inline-flex; gap: 1px; color: #f59e0b; }
+.rev-stars svg { height: 12px; width: 12px; fill: currentColor; }
+.rev-plat { font-family: 'Geist Mono', monospace; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted-2); }
+.rev-quote {
+  font-size: 0.82rem;
+  line-height: 1.5;
+  color: var(--fg);
+  letter-spacing: -0.005em;
+}
+.rev-tools { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.rev-tool {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.18rem 0.5rem;
+  border-radius: 999px;
+  background: var(--tint-1);
+  border: 1px solid var(--line);
+  font-size: 0.62rem;
+  color: var(--muted);
+  font-family: 'Geist Mono', monospace;
+}
+.rev-tool svg { height: 11px; width: auto; }
+.rev-by {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.rev-avatar {
+  display: grid;
+  place-items: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 999px;
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: #fff;
+}
+@media (max-width: 480px) { .rev-card { width: 16.5rem; } }
+
+/* ---------- Footer v2 ---------- */
+.footer-cta {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  padding: 2.25rem 1.75rem;
+  background:
+    radial-gradient(80% 120% at 0% 0%, rgba(59, 130, 246, 0.22), transparent 60%),
+    radial-gradient(60% 100% at 100% 100%, rgba(139, 92, 246, 0.18), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--line-strong);
+}
+@media (min-width: 768px) { .footer-cta { padding: 2.75rem 2.5rem; } }
+.foot-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem 2rem;
+  align-items: center;
+}
+@media (min-width: 768px) { .foot-grid { grid-template-columns: 1.4fr 1fr; } }
+.foot-link {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  margin-top: 1rem;
-  font-size: 0.84rem;
   color: var(--muted);
-  transition: gap 0.25s ease, color 0.25s ease;
+  font-size: 0.85rem;
+  transition: color 0.2s ease;
 }
-.work-card:hover .work-arrow { color: var(--fg); gap: 0.7rem; }
+.foot-link:hover { color: var(--fg); }
+.foot-divider { height: 1px; background: var(--line); width: 100%; margin: 2rem 0 1.25rem; }
+
+/* Strong emphasis text inside modal case studies — theme-aware */
+.text-fg-strong { color: var(--fg); font-weight: 600; }
+
+/* ---------- Light-theme text fixes (white text shouldn't bleed into bright backgrounds) ---------- */
+[data-theme="light"] .text-white:not(.gradient-text):not([style*="background"]) { color: var(--fg); }
+[data-theme="light"] .text-slate-200 { color: var(--fg); }
+[data-theme="light"] .text-slate-300 { color: var(--muted); }
+[data-theme="light"] .bg-black\/30 { background: rgba(15, 23, 42, 0.05); }
+[data-theme="light"] .border-white\/10 { border-color: var(--line); }
+[data-theme="light"] .border-white\/5  { border-color: var(--line); }
+/* Keep white text inside colored badges */
+[data-theme="light"] [style*="linear-gradient(180deg,#3b82f6"] .text-white,
+[data-theme="light"] .platform-pill .text-white,
+[data-theme="light"] .photo .text-white,
+[data-theme="light"] .modal-content .text-white { color: #fff !important; }
 
 /* ---------- Section index ticker (top-right, follows scroll) ---------- */
 .section-index {
