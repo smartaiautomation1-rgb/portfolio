@@ -382,6 +382,70 @@
     spyTargets.forEach((t) => spyIo.observe(t));
   }
 
+  // -------- stack section: tabbed slideshow with autoplay --------
+  const stackTabs = document.querySelectorAll('[data-stack-tab]');
+  const stackSlides = document.querySelectorAll('[data-stack-slide]');
+  const stackProgress = document.getElementById('stack-progress');
+  if (stackTabs.length && stackTabs.length === stackSlides.length) {
+    let idx = 0;
+    let autoT = null;
+    const set = (i) => {
+      idx = i;
+      stackTabs.forEach((t, n) => {
+        t.classList.toggle('is-active', n === i);
+        t.setAttribute('aria-selected', String(n === i));
+      });
+      stackSlides.forEach((s, n) => s.classList.toggle('is-active', n === i));
+      if (stackProgress && !reduceMotion) {
+        stackProgress.classList.remove('is-paused');
+        // restart the CSS animation
+        const after = stackProgress;
+        after.style.animation = 'none';
+        // trigger reflow
+        void after.offsetWidth;
+        after.style.animation = '';
+      }
+    };
+    const start = () => {
+      if (reduceMotion) return;
+      stop();
+      autoT = setInterval(() => set((idx + 1) % stackSlides.length), 5000);
+    };
+    const stop = () => { if (autoT) clearInterval(autoT); autoT = null; };
+    stackTabs.forEach((t, i) => t.addEventListener('click', () => { set(i); start(); }));
+    const stackSection = document.getElementById('sec-stack');
+    if (stackSection) {
+      stackSection.addEventListener('mouseenter', stop);
+      stackSection.addEventListener('mouseleave', start);
+    }
+    start();
+  }
+
+  // -------- review scroller controls (prev/next + autoplay) --------
+  const revScroll = document.getElementById('rev-scroll');
+  const revPrev = document.getElementById('rev-prev');
+  const revNext = document.getElementById('rev-next');
+  if (revScroll) {
+    const step = () => Math.round(revScroll.clientWidth * 0.72);
+    revPrev?.addEventListener('click', () => revScroll.scrollBy({ left: -step(), behavior: 'smooth' }));
+    revNext?.addEventListener('click', () => revScroll.scrollBy({ left:  step(), behavior: 'smooth' }));
+    if (!reduceMotion) {
+      let revAuto = setInterval(() => {
+        if (!revScroll.matches(':hover')) {
+          const max = revScroll.scrollWidth - revScroll.clientWidth - 4;
+          if (revScroll.scrollLeft >= max) revScroll.scrollTo({ left: 0, behavior: 'smooth' });
+          else revScroll.scrollBy({ left: 320, behavior: 'smooth' });
+        }
+      }, 4500);
+      revScroll.addEventListener('mouseenter', () => { clearInterval(revAuto); revAuto = null; });
+      revScroll.addEventListener('mouseleave', () => { if (!revAuto) revAuto = setInterval(() => {
+        const max = revScroll.scrollWidth - revScroll.clientWidth - 4;
+        if (revScroll.scrollLeft >= max) revScroll.scrollTo({ left: 0, behavior: 'smooth' });
+        else revScroll.scrollBy({ left: 320, behavior: 'smooth' });
+      }, 4500); });
+    }
+  }
+
   // -------- scroll-linked accent hue rotation on long pages --------
   if (!reduceMotion) {
     const accents = document.querySelectorAll('.gradient-accent');

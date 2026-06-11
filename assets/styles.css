@@ -823,6 +823,182 @@ details[open] summary svg.chev { transform: rotate(45deg); }
 /* Strong emphasis text inside modal case studies — theme-aware */
 .text-fg-strong { color: var(--fg); font-weight: 600; }
 
+/* ---------- Platform brand colors (Upwork green, Fiverr green) ---------- */
+.brand-upwork { color: #14A800 !important; font-weight: 600; }
+.brand-fiverr { color: #1DBF73 !important; font-weight: 600; }
+
+/* ---------- Stack section: tabbed slideshow (replaces 24-logo wall) ---------- */
+.stack-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.4rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  width: max-content;
+  max-width: 100%;
+  margin-inline: auto;
+}
+.stack-tab {
+  font-family: 'Geist Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.55rem 0.95rem;
+  border-radius: 999px;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.25s ease, background 0.3s ease, transform 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.stack-tab:hover { color: var(--fg); }
+.stack-tab.is-active {
+  color: #fff;
+  background: linear-gradient(180deg, #3b82f6, #2563eb);
+  box-shadow: 0 8px 18px -10px rgba(37, 99, 235, 0.6);
+}
+.stack-tab-count { font-size: 0.62rem; opacity: 0.7; padding: 0 0.3rem; border-radius: 999px; background: var(--tint-2); }
+.stack-tab.is-active .stack-tab-count { background: rgba(255, 255, 255, 0.22); opacity: 1; }
+.stack-stage { position: relative; min-height: 220px; }
+.stack-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transform: translateY(14px) scale(0.99);
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(.21,1.02,.73,1);
+}
+.stack-slide.is-active { opacity: 1; transform: none; pointer-events: auto; }
+.stack-progress {
+  position: relative;
+  height: 2px;
+  width: 100%;
+  background: var(--line);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 1.25rem;
+}
+.stack-progress::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 0;
+  background: linear-gradient(90deg, #3b82f6, #8b5cf6, #22d3ee);
+  animation: stack-fill 5s linear infinite;
+}
+.stack-progress.is-paused::after { animation-play-state: paused; }
+@keyframes stack-fill { from { width: 0; } to { width: 100%; } }
+.stack-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1.1rem 0.75rem;
+  border-radius: 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.stack-logo:hover { transform: translateY(-3px); border-color: var(--line-strong); background: var(--surface-2); }
+.stack-logo svg { height: 1.85rem; width: auto; max-width: 100%; }
+.stack-logo span { font-family: 'Geist Mono', monospace; font-size: 0.62rem; color: var(--muted-2); letter-spacing: 0.02em; }
+
+/* ---------- Review scroller (left/right controls on hover) ---------- */
+.rev-section { position: relative; }
+.rev-scroll {
+  display: flex;
+  gap: 0.9rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 0.5rem 0;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+          mask-image: linear-gradient(to right, transparent, black 3%, black 97%, transparent);
+}
+.rev-scroll::-webkit-scrollbar { display: none; }
+.rev-scroll > .rev-card { scroll-snap-align: start; }
+.rev-ctrl {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.85);
+  z-index: 5;
+  display: grid;
+  place-items: center;
+  height: 2.6rem;
+  width: 2.6rem;
+  border-radius: 999px;
+  background: var(--glass-bg-strong);
+  border: 1px solid var(--line-strong);
+  color: var(--fg);
+  cursor: pointer;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s cubic-bezier(.21,1.02,.73,1), background 0.2s ease;
+  backdrop-filter: blur(12px);
+}
+.rev-ctrl-prev { left: 0.5rem; }
+.rev-ctrl-next { right: 0.5rem; }
+.rev-section:hover .rev-ctrl, .rev-section:focus-within .rev-ctrl { opacity: 1; pointer-events: auto; transform: translateY(-50%) scale(1); }
+.rev-ctrl:hover { background: var(--surface); transform: translateY(-50%) scale(1.06); }
+.rev-ctrl svg { height: 1.1rem; width: 1.1rem; }
+@media (max-width: 767px) {
+  .rev-ctrl { opacity: 1; pointer-events: auto; transform: translateY(-50%) scale(1); height: 2.2rem; width: 2.2rem; }
+}
+
+/* ---------- Work page photo cards (real images, theme-aware) ---------- */
+.work-photo {
+  position: relative;
+  height: 9rem;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.work-photo .work-photo-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.05);
+  transition: transform 0.6s ease;
+}
+.work-card:hover .work-photo-img { transform: scale(1.1); }
+.work-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(7, 10, 20, 0.30) 0%, rgba(7, 10, 20, 0.78) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0.22), transparent 60%);
+  z-index: 1;
+}
+[data-theme="light"] .work-photo::before {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.15) 0%, rgba(15, 23, 42, 0.65) 100%),
+    linear-gradient(135deg, rgba(59, 130, 246, 0.20), transparent 60%);
+}
+.work-photo .work-photo-content {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.work-photo .work-tag { background: rgba(15, 23, 42, 0.55); border-color: rgba(255, 255, 255, 0.25); color: #fff; }
+.work-photo .work-metric { color: #fff; text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4); }
+.work-photo .work-metric .unit { color: rgba(255, 255, 255, 0.75); }
+
 /* ---------- Light-theme text fixes (white text shouldn't bleed into bright backgrounds) ---------- */
 [data-theme="light"] .text-white:not(.gradient-text):not([style*="background"]) { color: var(--fg); }
 [data-theme="light"] .text-slate-200 { color: var(--fg); }
